@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--
+/*
+- Calcular : Azul
+- Limpar : Red
+- Nota 1/7 Nota 2/9 pedir calcular  media 8 ( SITUAÇÃO FINAL VERDE)
+- Nota 1/5 Nota 2/4 pedir calcular  media 4.5 ( RECUPERA  VERDE)
+- Aprovado(a) : Verde
+- Recuperação : Orange (Nota 1 e )
+*/
+
+-->
+<style>
+body {
+background-color: darkgray;
+}
+</style>
+
+<title>Ex08 video 15</title>
+</head>
+<body>
+<!-- <h1>Calculadora de Média com Flash Message</h1>
+<h1>Calcular Média</h1>
+-->
+
+<main id="tela-principal"> <!-- L 11-->
+<section class="conteudo" id="formulario">
+<h1>Calcular Média</h1>
+<form action="#" method="POST">
+<div class="form-group">
+<label for="nota1">Nota 1</label>
+<input type="number" nome="nota1"
+id="nota1" min="0.0" max="10.0" step="=0.1"
+autofocus required onBLur="validarNumero
+(this)" />
+</div> <!-- L 18 -->
+<br>
+
+<div class="form-group">
+<label for="nota2">Nota 2</label>
+<input type="number" name="nota2"
+id="nota2" min="0.0" max="10.0" step="=0.1"
+required onBLur="validarNumero(this)" />
+</div> <!-- L 23 -->
+<br>
+
+<div class="form-group">
+<button class="botao" id="btnCalcular"
+type="submit">Calcular</button>
+<button type="reset" id="btnLimpar">Limpar</button>
+</div> <!-- L 28 -->
+<br>
+
+<div class="form.group">
+<label for="media">Média</label>
+<input type="number" name="media"
+id="media" vaLue="" readonLy />
+</div> <!-- L 33 -->
+<br>
+
+<div class="form-group">
+<input type="text" nome="situacao"
+class="cx" id="situacao"
+pLacehoLder="Situação Final" readonLy />
+</div>
+</form>
+</section>
+</main>
+
+<script>
+/* Aula 15 de JS Aplicação Calculadora de Média */
+
+// L 3
+let aviso = document.querySelector('#aviso')
+let formulario = document.querySelector('form')
+
+let btnCalcular = document.querySelector('#btnCalcular')
+let btnLimpar = document.querySelector('#btnLimpar')
+
+// L 9
+// selecionar caixas de texto por id
+let cxNota1 = document.querySelector('#nota1')
+let cxNota2 = document.querySelector('#nota2')
+let cxMedia = document.querySelector('#media')
+let cxSituacao = document.querySelector('#situacao')
+
+// L 15
+// Calcular Média
+function calcularMedia(n1, n2) {
+return (n1 + n2) / 2
+}
+
+// L 20
+// DEFINIR SITUAÇÃO FINAL COM BASE NA MÉDIA
+function situacaoFinal(mediaFnal) {
+let situacaoFinal = ''
+
+if (mediaFinal >= 7) {
+situacaoFinal = 'Aprovado(a)'
+} else if (mediaFinal <= 3) {
+situacaoFinal = 'Reprovado(a)'
+} else {
+situacaoFinal = 'Recuperação'
+}
+return situacaoFinal
+} // L 32
+
+// FORMATAR A CAIXA DE SITUAÇÃO FINAL
+function formatarSituacao(situacaoFinal) {
+console.log('Situação Final' +
+situacaoFinal)
+switch(situacaoFinal) {
+
+case 'Aprovado(a)':
+cxSituacao.classList.remove
+('reprovado')
+cxSituacao.classList.remove
+('recuperacao')
+cxSituacao.classList.add('aprovado')
+console.log('adicionar class aprovado')
+break
+
+// L 46
+case 'Reprovado(a)':
+cxSituacao.classList.remove
+('aprovado')
+cxSituacao.classList.remove
+('recuperacao')
+cxSituacao.classList.add
+('reprovado')
+console.log('adicionar class reprovado')
+break
+
+// L 53
+case 'Recuperação':
+cxSituacao.classList.remove
+('aprovado')
+cxSituacao.classList.remove
+('reprovado')
+cxSituacao.classList.add
+('recuperacao')
+break
+
+// L 60
+default:
+console.log('Situação Indefinida')
+} // fim do switch case
+
+}
+
+// L 66
+// VALIDAR E GERAR FLASH MESSAGE
+function validarNumero(numero) {
+let num1 = cxNota1.value
+let num2 = cxNota2.value
+if(num1 < 0 || num1 > 10 || num2 < 0 || num2 > 10) {
+fomulario.reset() // limpar form
+aviso.textContent = 'Digite uma nota entre 0.0 e 10.0'
+aviso.classList.add('alerta')
+setTimeout(function(){
+aviso.textContent = ''
+aviso.classList.remove('alerta')
+}, 2000);  // L 77
+}
+}
+
+// L 81 ERRO ERRO ERRO
+// CALCULAR A MÉDIA APOS O CLICK NO BOTÃO
+btnCalcular.addEventListener('click', function
+(e) {
+// console.log(Calcular Média)
+// pegar o valor que esta dentro das caixas
+// usar método parseFloat p converter string p float
+let nota1 = parseFloat(cxNota1.value)
+let nota2 = parseFloat(cxNota2.value)
+let media = calcularMedia(nota1, nota2)
+
+// L 90
+console.log(nota1)
+console.log(nota2)
+console.log(media)
+
+// L 94
+if(isNaN(media) || media < 0) {
+console.log ('Não é um número')
+cxSituacao.value = ''
+} else {
+cxMedia.value = parseFloat(media)
+cxSituacao.value = situacaoFinal(media)
+formatarSituacao(situacaoFinal(media))
+}
+e.preventDefault()
+}) // L 103
+
+// APOS LIMPAR TIRAR AS CLASSDA CX SITUAÇÃO
+btnLimpar.addEventListener('click', function() {
+cxSituacao.classList.remove('aprovado')
+cxSituacao.classList.remove('reprovado')
+cxSituacao.classList.remove('recuperacao')
+})
+</script>
+</body>
+</html>

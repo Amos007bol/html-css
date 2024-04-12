@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EX05 </title>
+
+<!-- JS Aqui na area do read Ñ recomendado
+<script src="ex.js"></script> - video 2
+-->
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: sans-serif;
+}
+body {
+/*background-color: darkgrey; - 1º */
+width: 100vw;
+height: 100vh;
+background-color: #ccc;
+}
+
+main {
+min-width: 960px;
+min-height: 100vh;
+margin: auto;
+background: #fff;
+padding: 2rem;
+}
+
+section {
+width: 960px;
+margin: 0 auto;
+}
+
+h1, section, article { /* L 29*/
+margin-bottom: 1rem;
+
+}
+
+#botoes { /* L32 */
+display: inline-block;
+margin-bottom: 1rem;
+}
+
+/* botoes L 38 */
+button {
+border: 1px solid #ccc;
+border-radius: 8px;
+padding: 0.625rem;
+cursor: pointer;
+}
+
+/* botão light  L 46 */
+#btLight {
+background: #ededec;
+color: #121212;
+}
+
+/* botão dark  L 52 */
+#btdark {
+background-color: #263238;
+color: #fff;
+}
+
+/* articles com class box  L 58 */
+.box {
+padding: 0.625rem;
+border-radius: 8px;
+}
+
+/*estilos para serem usados via JS  L 64 */
+.light {
+background: #fff;
+color: #191919;
+}
+
+.dark {
+background: #222;
+color: #fff;
+}
+
+.azuL { /* L 75 */
+background: #1a237e;
+color: #fff;
+}
+
+.amareLo { /* L 80 */
+background: #ffc107;
+color: #fff;
+
+}
+</style>
+
+</head>
+<body>
+
+<!-- Recomendável chamar os arquivos JS aqui no final
+<script src="ex.js"></script> (ESTÁ NO FINAL BODY)
+-->
+<!-- link para arquivo JS externo -->
+
+<main class="tela-principal"> <!-- L 11 -->
+
+<h1>Dom Manipular css c/ JS - V 9</h1>
+<span id="botoes"> <!-- L 13 -->
+<button class="modos"
+id="btlight">Light</button>
+<button class="modos"
+id="btdark">Dark</button>
+</span> <!-- L 16 -->
+<section id="conteudos">
+<article class="box">
+<h2>Imagem</h2>
+<figure><!-- L 20 -->
+
+<img id="foto" src="Taxis/foto buzios 205.jpg"
+alt="foto" />
+
+
+</figure>
+<p>Texto de teste 1 em parágrafo.</p>
+</article>
+<article class="box"> <!-- L 25-->
+<h2>Título</h2>
+<p>Texto de teste 2 em parágrafo.</p>
+</article>
+</section>
+</main>
+
+<script>
+// COMENTÁRIO EM LINHA
+/*
+COMENTÁRIO EM BLOCO
+*/
+
+// VIDEO 09: DOM MANIPULAR CSS COM JS.
+
+// fazer alteração por modo (por tag,ide class )
+// textContent faz a alteração
+// innerHTM faz tbm alteração
+
+let titulo = document.querySelector("h1") // L 3
+titulo.textContent = "Aula css"
+titulo.innerHTML = 'Aula Manipular'
+// let Imagem = document.querySelector("#foto")
+// imagem.setAttribute("src", "..//foto buzios 205.jpg") // L 7
+// imagem.setAtribute('width', '250px')
+/* MANIPULANDO CSS  L 12 */
+titulo.style.color = 'white';
+// document.querySelector("h1").style.color ="red"; //  OU
+document.querySelector("h1").style.backgroundColor= "#000"; // fundo
+document.querySelector("h1").style.borderBottom = "2px solid red";
+// titulo.style.padding = '0.625rem'; // expansão
+titulo.style.borderRadius = '5px';
+
+// L 18
+let box = document.querySelectorAll('box')
+// box[0].setAttribute('class', 'escura')
+// box[0].removeAttribute('class')
+
+// L 22 MODOS DE COR
+let tela = document.querySelector('main')
+
+let btnDark = document.querySelector('#btdark')
+
+let btnLight = document.querySelector('#btlight')
+
+// L 29
+btnDark.addEventListener('click', modoDark)
+btnLight.addEventListener('click', modoLight)
+
+function modoDark(){
+// event.preventDefault();
+console.log('modo dark')
+tela.classList.add('dark');
+tela.classList.remove('light');
+}
+
+// L 38
+function modoLight() {
+// event.preventDefault();
+console.log('modo light')
+tela.classList.remove('dark');
+tela.classList.add('light');
+
+}
+
+// VIDEO 09: DOM MANIPULAR CSS COM JS.
+
+
+// FIM DO VIDEO 08
+
+// VIDEO 08: DOM MANIPULAR HTML COM O JS.
+</script>
+<!--
+VIDEO 09: DOM MANIPULAR CSS COM JS
+
+FIM DO VIDEO 09
+-->
+
+<p> A Quinta página está aqui. Se você quiser, pode acessar a <a href="ex03.html">Terceira Página</a></p>
+
+<p> A Quinta página está aqui. Se você quiser, pode acessar a <a href="ex04.html">Quarta Página</a></p>
+
+<p> A Quinta página está aqui. Se você quiser, pode acessar a <a href="ex06.html">Sexta Página</a></p>
+
+</body>
+</html>

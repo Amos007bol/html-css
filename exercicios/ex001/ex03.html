@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EX03</title>
+<!-- JS Aqui na area do read Ñ recomendado
+<script src="ex.js"></script> - video 2
+-->
+
+</head>
+<body>
+
+<!-- VIDEO: 13  Estruturas for, forEach, while no JS
+<h1>Estrutura de Repetição:</h1>
+
+<main id="tela-principal">
+<h1>Estrutura de repetição</h1>
+<section class="conteudos">
+</section>
+</main>
+
+FIM DO VIDEO 13
+-->
+
+
+<!-- VIDEO 12: ESTRUTURAS IF ELSE E SWITCH CSE NO JS
+
+<main id='tela-principal'>
+<h1>Estruturas de Desvio</h1>
+<h2>Condicionais</h2>
+<hr/>  L 13
+<p id='sit1'></p>
+<p id='sit2'></p>
+<p id='sit3'></p>
+<hr/> L 17
+<p>if(), if() else, if() else if() else </p>
+<p>if ternário condição ? verdadeiro :
+falso</p>
+<h2>Decisão</h2>
+<hr/> L 21
+<p id='escolha'></p>
+<hr/>
+
+-->
+
+
+<!-- VIDEO 11: EVENTOS NO  JS
+- Arquivo JS externo
+- <body onLoad="carregou()" 1º PARTE
+- onScroLL="rolouPagina()"> 2º PARTE (FICOU EM COMENTÁRIO)
+
+<body onLoad="carregou()">
+<main class="tela-principal">
+<h1 id="titulo" onMouseOver="focou()">Aula 11</h1>
+<section class="conteudo">
+<article class="box">
+
+</article>
+<article class="box">
+</article>
+<button id="btn1" class="botao">Box1</button>
+<button id="btn2" class="botao">Box2</button>
+</section>
+<hr />
+<form action="">
+<input
+id="cxtexto"
+type="text"
+placeholder="Digite seu
+nome"
+onFocus="focoNoCampo()"
+onFocusOut="semFocoNoCampo()"
+onKeyPress="avisarQueTeclou
+()"
+/>
+<button id="btn3" class="botao"
+type="=submit">Enviar</button>
+</form>
+</main>
+
+<script>
+
+// VIDEO 11: EVENTOS NO JS
+// L  3
+function carregou() {
+console.log ('Página carregada com sucesso!' )
+}
+
+function focou() {
+console.log('Foco no título')
+}
+
+// L 11
+function rolouPagina() {
+console.log('Pagina rolando')
+}
+
+function focoNoCampo() {
+console.log('Foco no campo de texto')
+}
+
+// L 19
+function semFocoNoCampo() {
+console.log('Saiu o foco do campo de texto')
+}
+
+// L 23
+let letras = document.querySelector('input[type=text]')
+function avisarQueTeclou() {
+let numLetras = 1
+console.log('Está teclando' + (letras.value.length + numLetras))
+}
+
+let botao1 = document.querySelector('#btn1')
+let botao2 = document.querySelector('#btn2')
+let botaoEnviar = document.querySelector('#btn3')
+
+// L 33
+// mouseover a seta de mouse esta no element
+// Função anonima
+botao1.addEventListener('mouseover',
+function () {
+console.log('Foco no botão 1')
+})
+
+// L 38
+// focoout ou blur quando sai o foco
+botao2.addEventListener('blur', function ()
+{
+console.log('Foco no botão 2')
+})
+
+// 1 click do mouse
+botaoEnviar.addEventListener('click',
+function (event) {
+event.preventDefault()
+console.log('Clicou no botão Enviar')
+})
+
+// FIM VIDEO 11
+</script>
+
+-->
+
+<!--
+VIDEO 10: FUNCÕES  EM JS [EXTRA] ARROW FUNCTION EM JS
+- Arquivo JS externo
+
+<main>
+<h1>Video 10: [Extra] Arrow Function em JS </h1>
+
+<section class="box">
+</section>
+
+<section class="box">
+</section>
+
+<section class="box">
+</section>
+
+<section class="box">
+</section>
+
+<section class="box">
+</section>
+<h3>Abaixo é JS</h3>
+</main>
+
+
+Arquivo JS
+
+// VIDEO 10: FUNÇÕES EM JS [EXTRA] ARROW FUNCTION EM JS:
+// L 3
+// let titulo = document.querySelector('h1')
+// titulo.textContent = 'Funções no JS'
+// let box = document.querySelectorAll('box')
+
+//* Funções sem parâmetros e sem retorno (procedure) */
+// function olaMundo() {
+// document.write('Olá Mundo sem retorno<br>')
+//}
+
+//* Funções sem parâmetros e com retorno (function) */
+// function olaMundo2() {
+// return 'Olá Mundo com retorno<br>'
+// }
+
+// L 17
+// CHAMAR A FUNÇÃO =  EXECUTAR ELA
+// 1º opção: olaMundo()
+// 2º opção : document.write(olaMundo2())
+// olaMundo()
+// document.write(olaMundo2())
+
+// L 21
+// let x = 2
+// let y = 1
+//let mensagem = 'Jesus Cristo é o Salvador'
+
+//* Funções com parâmetros e sem retorno (procedure) */
+// function somar(a, b) {
+//document.write((a + b) + '<br>')
+// }
+
+/* Funções com parâmetros e com retorno (function) */
+// function somar2(c, d) {
+// return c + d
+// }
+
+// CHAMAR A FUNÇÃO = EXECUTAR ELE
+// somar(x, y)
+// somar(10, 5)
+
+// document.write(`<p>${somar2(x, y)}</p>`)
+// document.write(`<p>${somar2(5, 2)}</p>`)
+
+// L 42
+/* função anonima = não tem nome
+pode ou não ter parâmetros
+pode ou não ter retorno
+*/
+
+// titulo.addEventListener('click', function
+// () {
+// console.log('clicou no título')
+// })
+
+//  L 52
+// Arrow Functions neste ex. c/ chaves usar Q tiver 2 ou + ações
+//const nomeFuncao = () => {
+// acoes
+// }
+
+/* Arrow Functions ES6 2015 em diante*/
+// const olaMundoArrow = () => document.write
+// ('Olá mundo!!!!!')
+
+// não precisa usar a palavra function
+// não precisa usar a palavra return
+// não se usa nome na função
+// não precisa colocar {} se for so uma instrução
+// const olaMundo2Arrow = () => '<p>Olá mundo com arrow function</p>'
+
+// L 60
+// olaMundoArrow()
+// document.write(olaMundo2Arrow())
+
+// FIM DO VIDEO 10
+
+
+FIM VIDEO 10
+
+-->
+
+
+<!--
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: sans-serif;
+}
+body {
+/*background-color: darkgrey; - 1º */
+width: 100vw;
+height: 100vh;
+background-color: #ccc;
+}
+
+main {
+min-width: 960px;
+min-height: 100vh;
+margin: auto;
+background: #fff;
+padding: 2rem;
+}
+
+section {
+width: 960px;
+margin: 0 auto;
+}
+
+h1, section, article { /* L 29*/
+margin-bottom: 1rem;
+
+}
+
+#botoes { /* L32 */
+display: inline-block;
+margin-bottom: 1rem;
+}
+
+/* botoes L 38 */
+button {
+border: 1px solid #ccc;
+border-radius: 8px;
+padding: 0.625rem;
+cursor: pointer;
+}
+
+/* botão light  L 46 */
+#btLight {
+background: #ededec;
+color: #121212;
+}
+
+/* botão dark  L 52 */
+#btdark {
+background-color: #263238;
+color: #fff;
+}
+
+/* articles com class box  L 58 */
+.box {
+padding: 0.625rem;
+border-radius: 8px;
+}
+
+/*estilos para serem usados via JS  L 64 */
+.light {
+background: #fff;
+color: #191919;
+}
+
+.dark {
+background: #222;
+color: #fff;
+}
+
+.azuL { /* L 75 */
+background: #1a237e;
+color: #fff;
+}
+.amareLo { /* L 80 */
+background: #ffc107;
+color: #fff;
+}
+</style>
+
+-->
+
+<!-- Recomendável chamar os arquivos JS aqui no final
+<script src="ex.js"></script> (ESTÁ NO FINAL BODY)
+link para arquivo JS externo
+
+-<main class="tela-principal">
+<h1>Aula 09</h1>
+<span id="botoes">
+<button class="modos"
+id="btlight">Light</button>
+<button class="modos"
+id="btdark">Dark</button>
+</span>
+<section id="conteudos">
+<article class="box">
+<h2>Imagem</h2>
+
+<img id="foto" src="Taxis/foto buzios 205.jpg"
+alt="foto" />
+
+</figure>
+<p>Texto de teste 1 em parágrafo.</p>
+</article>
+<article class="box">
+<h2>Título</h2>
+<p>Texto de teste 2 em parágrafo.</p>
+</article>
+</section>
+</main>
+
+-->
+
+<!--
+VIDEO 09: DOM MANIPULAR CSS COM JS
+
+FIM DO VIDEO 09
+-->
+
+
+<!-- <h1>VIDEO 08: DOM Manipular HTML com o JS.</h1>
+- <h1 id="titulo">VIDEO 08</h1>
+<div class="box">
+<h2 class="titulo">Box 1</h2>
+<p class="textos">Texto 1</p>
+</div>
+
+<div class="box">
+<h2 class="titulo">Box 2</h2>
+<p class="textos">Texto 2</p>
+</div>
+
+<div class="box">
+<h2 class="titulo">Box 3</h2>
+<p class="texto">Textos 3</p>
+-
+
+
+FIM DO VIDEO  08
+-->
+<!--
+<script src="ex.js"></script>
+-->
+
+<script>
+
+//VIDEO 13: ESTRUTURAS for, forEach, while, do while no JS:
+
+// L 3
+// let carros = ['Fusca', 'Brasília', 'Gurgel']
+
+// FOR = para faca
+// i = iterador, interacao ou index
+// for (let i = 0; i < 5; 1++) {
+// document.write(i + '')
+// }
+
+// L 11
+// for (let i = 0; i < carros.length; i++) {
+// document.write(`<li>${carros[i]}</li>`)
+// }
+
+// L 15 FOREACH forEach = para cada
+// let frutas = ['Pera', 'Uva', 'Maçã', 'Banana', 'Melancia']
+
+// FIM  DO VIDEO 13
+
+// video 12
+// VIDEO 12: ESTRUTURAS IF ELSE E SWITCH CASE NO JS:
+// CONDICIONAIS E DE ESCOLHA
+// let sit1 = document.querySelector('#sit1')
+// let sit2 = document.querySelector('#sit2')
+// let sit3 = document.querySelector('#sit3')
+// let escolha = document.querySelector('#escolha')
+
+// let notaFinal1 = 3
+// let notaFinal2 = 8
+// let notaFinal3 = 5
+
+// CONDICIONAIS
+
+// L 16
+// IF
+// if (notaFinal1 >= 7) {
+// sit1.textContent = 'Aprovado'
+// }
+
+// L 21
+// IF ELSE
+// if (notaFinal1 >= 7) {
+// sit1.textContent = 'Aprovado(a)'
+// } else {
+// sit1.textContent = 'Reprovado(a)'// 'Reprovado(a)'
+// }
+
+// IF TERNARIO
+// notaFinal3 >= 7  ? se.textContent = 'Passou' : 'Ficou'
+// notaFinal3 >= 7  ? sit1.textContent = 'Passou' :
+// sit2.textContent = 'Ficou'
+
+// L 31
+// IF ENCADEADO OU ANINHADO
+// if(notaFinal3 >= 7) {//3 - 3,8, 5
+// sit2.textContent = 'Aprovado' // 3
+// } else if (notaFinal3 <= 3) { //3
+// sit1.textContent = 'Reprovado'
+// } else {
+// sit1.textContent = 'Recuperação'
+// }
+
+// L 40
+// ESCOLHA CASO
+// let situacao = ''
+// let situacao = 'Aprovado'
+// let situacao = 'Reprovado'
+// let situacao = 'Recuperacao'
+
+// L 46
+// switch(situacao) {
+
+// case 'Aprovado':
+// escolha.textContent = 'Passou de ano'
+// break
+
+//case 'Reprovado':
+// escolha.textContent = 'Não passou de ano'
+// break
+
+// case 'Recuperacao':
+// escolha.textContent = 'Ainda tem uma chance'
+// break
+
+// L 60
+// default:
+// escolha.textContent = 'Estude'
+// default nao precisa de break
+// }
+
+// fim do video 12
+
+
+
+// VIDEO 09: DOM MANIPULAR CSS COM JS.
+
+// COMENTÁRIO EM LINHA
+/*
+COMENTÁRIO EM BLOCO
+*/
+
+// VIDEO 09: DOM MANIPULAR CSS COM JS.
+
+// fazer alteração por modo (por tag,ide class )
+// textContent faz a alteração
+// innerHTM faz tbm alteração
+
+// let titulo = document.querySelector("h1") // L 3
+// titulo.textContent = "Aula css"
+// titulo.innerHTML = 'Aula Manipular'
+// let Imagem = document.querySelector("#foto")
+// imagem.setAttribute("src", "..//foto buzios 205.jpg") // L 7
+// imagem.setAtribute('width', '250px')
+
+/* MANIPULANDO CSS  L 12 */
+// titulo.style.color = 'white';
+// document.querySelector("h1").style.color ="red"; //  OU
+// document.querySelector("h1").style.backgroundColor= "#000"; // fundo
+// document.querySelector("h1").style.borderBottom = "2px solid red";
+// titulo.style.padding = '0.625rem'; // expansão
+// titulo.style.borderRadius = '5px';
+
+// L 18
+// let box = document.querySelectorAll('box')
+// box[0].setAttribute('class', 'escura')
+// box[0].removeAttribute('class')
+
+// L 22 MODOS DE COR
+// let tela = document.querySelector('main')
+
+// let btnDark = document.querySelector('#btdark')
+
+// let btnLight = document.querySelector('#btlight')
+
+// L 29
+// btnDark.addEventListener('click', modoDark)
+// btnLight.addEventListener('click', modoLight)
+
+// function modoDark(){
+// event.preventDefault();
+// console.log('modo dark')
+// tela.classList.add('dark');
+// tela.classList.remove('light');
+// }
+
+// L 38
+// function modoLight() {
+// event.preventDefault();
+// console.log('modo light')
+// tela.classList.remove('dark');
+// tela.classList.add('light');
+
+// }
+
+// FIM DO VIDEO 9
+
+
+// VIDEO 08: DOM MANIPULAR HTML COM O JS.
+
+/*
+Arquivo JS aula 08 DOM
+// DOM = Document Object  Model
+// Arvore com elementos desde o Browser, a Janela do Browser, o Documento e cada elemento html que formam os conteúdos. */
+
+/*
+navigator
+window
+location
+document -> html -> head e body
+history
+No JS Tudo isso é um objeto que pode ser acessado
+*/
+
+// PARA MANIPULAR O DOM PRECISAMOS
+// indicar qual objeto usar, depois
+// chamar um método(função) para
+// selecionar ele, seus dados, trazer
+// informações. etc.
+
+// L 20
+// Selecionando por: TAG  ('h1')
+//  OU ID ('#titulo')
+// Selecionando Por: CLASS ('.box')
+// document.querySelectorAll('h2') Acessa todos de uma classe ou tag
+// Eu Posso chamar a tag e ver o conteúdo
+
+// document.querySelector('h1')
+// document.querySelector('#titulo')
+// document.querySelector('.box')
+// document.querySelector('h2')
+// document.querySelectorAll('h2') // entrada p/ acessar todos de uma classe
+//
+// .querySelector()
+// selecionar elemento com base na tag. #id ou .class
+// let titulo = document.querySelector('h1')
+// Eu preciso alterar ele, existe o (titulo.textContent)
+// temos tbm o (titulo.textContent = 'DOM') assim iremos alterar p/ DOM
+// Vamos ver o conteúdo da (tag) posso atribuir um outro valor
+// let titulo = document.querySelector('#titulo')
+// console.log(titulo)
+
+// .textContent
+// propriedade ou atributos textContent
+// serve para acessar ou alterar conteúdo
+// de um elemento que foi selecionado
+// console.log(titulo.textContent)
+// console.log(titulo.innerHTML)
+// L 28
+
+// L 30 Temos atribuição da mudança
+// ALTERAMOS O CONTEÚDO
+// no HTML Não altera (VIDEO 08 P/ DOM )
+// titulo.textContent = 'Fast Táxi'
+// console.log(titulo.textContent)
+
+// .querySelectorAll()
+// selecionar todos elementos com base na tag. #id ou class
+// alterando p/texto qualquer (box 1  texto 1)
+// let testando = document.querySelectorAll('.box')
+// console.log(testando)
+// document.write(testando[0].textContent)
+// document.write(testando[1].textContent)
+// document.write(testando[2].textContent)
+// testando[0].textContent = textQualquer // alterando p/texto qualquer
+
+// L 42
+// Existem também os métodos
+// MAS, PREFIRA USAR O .querySelector()
+/*
+.getElementsByTagName()
+.getElementsById()
+.getElementsByClassName()
+*/
+
+// L 50
+// let testeTag = document.getElementsByTagName('div')
+// console.log(testeTag)
+// document.write(teteTag[0].textContent)
+// document.write(teteTag[1].textContent)
+
+// let testeId = document.getElementById('título')
+// console.log(testeId)
+
+// L 58
+// let.testeClass = document.getElementsByClassName('box')
+// console.log(testeClass)
+// document.write(testeClass[0].textContent)
+// document.write(testeClass[1].textContent)
+
+// FIM DO EX 08
+
+
+// VIDEO 07 :
+// FIM DO EX007
+
+// Video 6: Revisão e Desafios
+
+// VIDEO 06 REVISÃO E DESAFIOS EM JAVASCRIPT:
+// Criar variáveis use ( let ou var )
+// Tipo de dados ('', "")
+// Tipo Numérico pode ser: Real, Float ou Inteiro
+// Podemos tbm fazer operações
+// No document. write tudo dentro será texto
+// Se Eu quiser colocar o conteúdo de uma (var,constant,objeto)
+// eu começo c/ ${`precoTotal`} conf. neste ex. escrever em tela
+// Um extra (new Intl) um objeto colocar no padrão Brasil
+// formatando um determinado valor p/ padrão Brasil
+// no caso ( , p/ decimal) e ( . para casa de milhar ou agrupador)
+// Qual é a localidade 1ª Parâmetro ('pt-BR',)
+// 2ª objeto, qual os dados,dados monetário {style: 'currency'}
+// poderia tbm colocar (currency percentual, decimal)
+// esses são os três  básicos numéricos
+// (BRL) símbolo monetário
+
+// let produtos = 'Arroz'
+// let quant = 2
+// let precoUnitario = 4.99
+// let precoTotal = quant * precoUnitario
+// document.write(`Preço Total R$ ${precoTotal}<br>`)
+// console.log(new Intl.NumberFormat('pt-br').format(precoTotal))
+
+// document.write(`Preço Total ${precoTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL'})} <hr>`) // este ex. é recomendado
+
+// CRIAR CONSTANTE
+// (constant) e espaço na memória cria um identificador e atribuímos
+// um valor ele vai ser mutável ele ñ será modificado a não ser
+// em situações bem especiais
+// poderia tbm criar (let)
+// const nome = 'Edna Vieira'
+// const peso = 83.5
+// const altura = 1.75
+// const imc = peso / (altura * altura)
+
+// document.write(`IMC: ${imc}  <br>`)
+// document.write(`IMC: ${imc.toFixed(2)} <br>`)
+
+
+// CRIAMOS UMA (VAR let)
+// com valores Reais ou float
+// Fiz o calculo nota final
+// fiz o (document.write) p/ escrever aqui ñ estou trabalhando
+// c/ template string.
+// Temos aqui neste ex É: (string, operador + Q è concatenação
+// c/ conteúdo da Nota Final, concatenado c/ a tag <br> )
+// Nota Final (17)
+//
+// let nota1 = 7.5
+// let nota2 = 5.5
+// let nota3 = 4.0
+// let notaFinal = nota1 + nota2 + nota3
+// document.write('Nota Final' + notaFinal + '<br>')
+
+
+// CRIAMOS UMA (VAR let)
+// Valor (X)
+// Desconto (Y)
+// resposta: R$ 1.854,57 formato monetário do Brasil
+// (C/ toLocaleString)
+// Sem  ele fica no formato Americano
+// Resposta: 1854.57
+
+// let compra = 1999.99
+// let desconto = 145.42
+// let compraComDesconto = compra - desconto
+
+// document.write(compraComDesconto.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) + '<br>' )
+
+// document.write(compraComDesconto + '<br>')
+
+// FIM DO VIDEO 6
+
+
+
+// Video 5: Objetos em JavaScript
+// CRIAR OBJETO
+// let pessoa = {//entre chaves atribuímos valores colocamos os elementos ex. nome, idade etc.
+// nome : 'Edna',// separar uma propriedade de outra utiliza (,)no final
+// idade : 40,
+// peso : 93.5,
+// altura : 1.75,
+// doador : false,// a ultima propriedade Ñ é obrigatório a (,)
+// }
+
+// let produtos = {
+// descricao : [], // se fosse em forma de texto ("")
+// preco : []// indicar se fosse em forma de Nº 0.0 -  ou Array Vazia
+// }
+
+// const carros = {
+// marca : ['Ford', 'Fiat', 'GM'],
+// modelo : ['Ka', 'Uno', 'Corsa'],
+// ano : [1999, 2005, 2010] // a ultima propriedade Ñ é obrigatório a (,)
+// }
+
+// COMO ACESSAR UMA propriedade usando.
+/*
+pessoa.nome // pessoa ['nome']
+pessoa.idade //pessoa ['idade']
+pessoa.peso // pessoa ['peso']
+pessoa.altura
+*/
+
+// ACESSAR PROPRIEDADE usando ['']
+/*
+pessoa.nome //
+pessoa.idade
+pessoa.peso // pessoa ['peso']
+pessoa.altura
+*/
+
+// OPERAÇÃO IMC e peso / altura * altura)operação
+// = (peso divide pela altura multiplicado pela altura  )
+// let imc = pessoa.peso / (pessoa.altura * pessoa.altura)
+
+// .toFixed(X)
+// limita o numero de casas decimais
+// imc dado numérico acessar o método e fixa o Nº de casa decimais
+// console.log("IMC", imc.toFixed(2))
+
+// ALTERAR/ATUALIZAR VALOR de propriedade
+// podemos modificar (nome, valor etc. )
+// através do operador de atribuição passamos um novo valor (modificação)
+// Obs.modificação só uma vez neste estilo + de 1 usar (spreed operator)
+// que é o uso da reticência(...)
+// pessoa.nome = "Edna Freitas"// através do operador de atribuição modifica
+// produtos.descricao = ['Arroz']
+// produtos.preco = ['4.99']
+
+// Usando Spreed operator = reticência(...)
+// usa a reticência na frente de uma Array
+// recebe uma cópia do Array produtos e assim adicionamos um novo produto
+// ou mais produtos
+// produtos.descricao = [...produtos.
+//descricao, 'Feijão', 'Trigo']
+//produtos.preco = [...produtos.preco, 9.99, 4,79]
+
+// Usando spreed operator em objetos const
+// Podemos adicionar , marca, modelo e ano através do (spreed operator)
+// e acrescentamos + 1 objeto neste ex. (Fusca)
+// objetos são estruturas hibridas
+// guardamos um conjunto de dados
+// carros.marca = [...carros.marca, 'WV']
+// carros.modelo = [...carros.modelo, 'Fusca']
+// carros.ano = [...carros.ano, '1979']
+
+// FIM DO VIDEO 5
+
+
+// Video 4: ARRAYS, MÉTODOS, LENGTH e SPREED OPERATOR
+/* Arquivo JS video 004 Array */
+
+//let produtos = ['Arroz', 'Feijão', 'Leite'] //nome do array é produtos
+//var codigos = Array(10,20,30)//nome do array é códigos -pouco usada(var)
+//var test = Array(10) //criamos um array vazio c/ 10 posições
+//test[0] = 'Oi' // acessando posições do vetor utilizando nome e entre []
+//test[9] = 'Tudo bem?'
+//test[10] = "Opa!"
+// prolet meses = ['Jan', 'Fev', 'Mar', 'Apr']//nome do array é meses
+// meses[0] = "Janeiro"// vai receber nome completo  no array
+
+// ADICIONAR no final da Lista usar o push = empurre
+//produtos.push('açúcar', 'trigo')// acrescenta a lista produtos
+//codigos.push(40, 50, 60, 70,80,90)//acrescenta a lista código
+//meses.push('Mai', 'Jun', 'Jul', 'Ago' )//acrescenta a lista meses
+
+// REMOVER do final da lista usar o  pop = estourar
+//produtos.pop()// o pop remove o ultimo da lista  produtos(trigo)
+//codigos.pop()// o pop remove o ultimo da lista códigos(90)
+//meses.pop()// o pop remove o ultimo da lista
+//meses.pop()// eu posso usar o pop + vezes e vai remover sempre o ultimo da lista
+//codigos.pop()
+//codigos.pop()
+
+// ADICIONAR no início da lista unshift
+//produtos.unshift('Uva', 'Maçã')// adiciona no inicio da lista
+//codigos.unshift(10)
+
+// REMOVER do inicio só o primeiro da lista shift
+//produtos.shift()// remove do inicio da lista ( TREINAR ENTRADA E RETIRADA)
+//codigos.shift()
+
+// REMOVE de uma posição da lista especificando os itens splice
+// Manipulando o Array
+// splice = emendar
+// posicao inicial, quantos remover
+//codigos.splice(1, 3) // estou apagando 3 elementos é 20,30,e 40 da lista
+
+// COPIAR array slice = fatiar porção
+// Manipulando o Array
+// a partir de qual index e elemento e quantos (copiar)
+// posição inicial, quantos remover
+//1º let meses1 = meses.slice() // fatia, separar (copia o Array meses)
+// 2º let meses2 = meses.slice(0,3)//a partir de qual elementos e quantos(copia um array)
+
+// VER TAMANHO DO ARRAY length comprimento
+// Saber o comprimento do Array (quantos elementos ele tem)
+// meses.length
+// meses1.length
+// meses2.length
+
+// spreed operator ... ele copia todo conteúdo do Array
+// operador simples é uma reticências(...)
+// Operador simples dizendo Q Array produtos vamos adicionar elementos
+// Eu sei que é um Array, porque tem os []colchetes
+// let teste = [...produtos, 'Ovo', 'Pera' ]//adicionando no array produtos ver no teste ttl de produtos será(4)
+
+// FIM DO VIDEO 4
+
+
+// Video 3 : Operadores e Operações
+// Curso de JavaScript
+
+// const curso = "JS"
+// const prof = "Edson Maia"
+
+// let email = "edsonmaiaiap@gmail.com"
+// let site = "edsonmaiaiap.wordpress.com"
+// let num_aula = 3
+
+// alert("Curso" + curso +
+// "\nMinistrado por" + prof)
+
+// document.write("Aula nº" +num_aula+"<br")
+// document.write(`Aula nº ${num_aula}<br>`)
+
+// console.log(email)
+// console.log(site)
+
+//let n1 = 10 // Nº inteiro (=) recebe ou atribui
+//let n2 = 2 // Nº inteiro variavel tipo Nº
+//let n3 = "2" // ela é uma String e tipo texto está entre("")
+
+//document.write('N1 ${n1} <br>')
+//document.write('N2 ${n2} <br>')
+//document.write('N3 ${n3} <br>')
+
+//console.log(n1 + n2) //adição
+//console.log(n1 - n2) //subtração
+//console.log(n1 * n2) //multiplicação
+//console.log(n1 / n2) //divisão
+//console.log(n1 % n2) //resto ou modulo
+
+//console.log(n2 == n3) // (==) igual a (comparação)
+//console.log(n2 === n3) // (===) idêntico a (tipo são iguais)
+//console.log(n2 != n3) //(!=) diferente de não= (não é igual)
+//console.log(n2 !== n3) // (!==) não é idêntico ( tipo de dados)
+
+//console.log(n1 > n2)// (n1 maior n2) um valor é maior Que outro
+//console.log(n1 < n2)// (n1 menor  Que n2) um valor menor que outro
+//console.log(n1 >= n2)//(n1 maior ou igual n2)  Uma valor menor ou igual
+//console.log(n1 <= n2)//(n1 é igual ou menor n2)
+
+//let a = true
+//let b = false
+//console.log(a && b)//(&&) E  AND (conteúdo lógico)
+//console.log(a || b) // (||) Ou OR (um ou outro é verdadeiro)
+//console.log(!a) // NÃO NOT negação
+//console.log(b) // (b) Falso
+//console.log(a) // (a) true
+
+// FIM DO VIDEO 3
+
+
+// Videos 2 : Sintaxe, Variáveis, Constante, Tipos.
+// Conceitos fundamentais como:
+// Como declara uma variável
+// Como atribuímos um valor para ela
+// Quais são os principais tipos primitivos
+// Como cria uma constante
+// Como atribui o valor de uma constante
+// Como escreve o conteúdo de uma variável ou de uma constante
+// Como escreve esse conteúdo de forma concatenada ou usando template string.
+
+//document.write("Olá Mundo!"); /*saída em escrita video 2 */
+//console.log("Outro Olá Mundo!"); /*saída em log no browser */
+//alert("Estou aprendendo JS com Alerte"); /* MSG ""  - Video2*/
+
+// Variável (var) Ñ recomendada -
+// criando variável (let)
+//let mensagem = "Minha mensagem"; //var let texto ou string("" , '')
+//let mensagem2 = "Outra mensagem";
+//let meuPeso = 83.5; // tipo real ou float temos frações decimais
+//let meu_peso = 83.5; // usamos underline ou letra maiúscula (composto)
+//let minhaAltura = 1.75; //tipo real ou float temos frações ou decimal
+//let minhaIdade = 40; // inteiro
+//let ehDoador = false; // tipo:lógico ou booleano-ñ se usa assentos (eh) true ou false
+//let teste = null;//texto: "", '', - 0, 0.0, - false - undefined,
+
+// CRIAR CONSTANTES E ATRIBUIR VALOR
+// criando variável const
+// const PI = 3.1415; //regra de nome minha escolha
+// const TAXA = 0.5; // equivale a 50%
+
+//teste = "Algum conteúdo" // podemos modificar no corpo a qualquer hora
+
+/* ESCREVER O CONTEÚDO DE VARIÁVEIS E CONSTANTES */
+// write é: um método de escrita
+// document é: um objeto elemento que estamos manipulando usando JS
+// Entre () agente passa o conteúdo que agente quer escrever
+// quando houver Sinal $ usar Crase (` `)
+
+//document.write("<p> Mensagem" + mensagem + "</p>")//Concatena sinal (+)
+//document.write(`Mensagem2: ${mensagem2}`); // template string ($) crase
+//document.write("<p>Peso: " + meuPeso + "Kg </p>");//concatenação (+)
+//document.write(`Altura: ${minhaAltura} m`); //template string($) crase
+//document.write("<p> Idade" + minhaIdade + "anos</p>");
+//document.write(`Doador? ${ehDoador}`); // usar a crase (` `)
+//document.write("<p>Teste: " + teste + "</p>");
+//document.write("<p>PI" + PI + "</p>");
+//document.write("<p>TAXA" + TAXA + "</P>");
+
+// FIM VIDEO 2
+
+
+// Videos 1 : Introdução ao JavaScript.
+
+// Praticando no HTML Usando o (script)
+// 1º Ex. de comando de saída
+// 2º Ex. vou encontrar no Console o comando de saída
+// 3º Ex. que é o alert  comando de saída (utilizado para MSG)
+// Comandos Básicos de saídas de dados utilizando JS
+// document.write('Olá Mundo!'); // 1º Ex. finalizar com (; ou Não)
+// console.log("Outro Olá Mundo!") // 2º Ex.esta inf. está no console
+// alert("Olá minha primeira msg alert");// 3º Ex. alert(MSG)
+
+// => Linguagem de Programação Interpretada
+// => Front-End (V8) e  Back-End (com Node JS)
+// => Serve para fazer interatividades, regras de negócios,
+// manipulação de conteúdos das páginas HTML, formulários,
+// imagens, tabelas, gráficos, criar jogos, apps, etc.
+// => Serve para desenvolvimento Descktop com Eletron.
+// => Também para Robótica e IoT com a ferramenta Johnny five.
+
+// JavaScript (front e back)
+//=> Todo Navegador (Browser) Web tem o interpretador front-end do JS.
+//=> V8 é o interpredador JS, também chamado de máquina virtual JS.
+//=> Os códigos podem ser embutidos no HTML ou
+// "Linkados" em arquivos esternos.
+//=> Para ele funcionar no back-end é necessário no Node JS.
+// site: https://nodejs.org/en/
+
+// JavaScript (front)
+// => script - será identificado no (HTML) como ex. abaixo:
+
+// <script>
+// alert ("Olá Mundo!") // com ou sem ;
+// <script>
+
+// alert('Olá Mundo')
+
+// => Link externo
+// <script src="codigo.js">/script>
+// => source indica o caminho da pasta e arquivo  Q tem a extensão JS.
+// onde estão os cod. do JS.
+
+// Vamos para prática
+//=> Vamos criar nossos 1º scripts embutidos e em arquivos externos JS.
+// foco inicial é no (Front End)
+
+// Referências extras:
+// => https://wwww.alura.com.br/artigos/o-que-e-front-end-e-back-end
+// => https://wwww.electronjs.org/
+// => https://johnny.five.io/
+
+// Fim  Video 1
+
+
+//let meu_peso = "73kg"; // (_) palavras compostas
+//let meuPeso = "73Kg";// (em maiúsculo)
+
+// Prof ED Maia Curso JS
+
+</script>
+
+<!-- Recomendável chamar os arquivos JS aqui no final  -->
+
+
+<!--
+<script src="ex.js"></script>
+hr
+<img src="Taxis/logoFV-91.png" alt="foto">
+
+-->
+
+
+
+
+<!--
+Prof. Edson Maia
+- Curso de JavaScript
+- site: HTML DOM EVENTS
+- Fazer o Curso de Técnicas de programações
+- <img src="Taxis/logoFV-90.png" alt="foto">
+- Fazer o curso de técnica de programação
+- Ir Para o Console
+- Limpar o Console/Terminal ( Ctrl + L)
+-->
+
+<!--
+<p> A Terceira página está aqui. Se você quiser, pode acessar a <a href="ex04.html">Quarta Página</a></p>
+
+<p> A Terceira página está aqui. Se você quiser, pode acessar a <a href="ex05.html">Quinta Página</a></p>
+
+<p> A Terceira  página está aqui. Se você quiser, pode acessar a <a href="ex06.html">Sexta Página</a></p>
+-->
+
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta https-equiv="X-UA-Compatible"
+content="IE=edge">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+<title>ex07 Video 14</title>
+
+<style>
+body {
+background-color: darkgrey;
+}
+
+h1 {
+background-color: white;
+}
+
+button {
+color: rgb(134, 107, 56);
+border-radius: 5px;
+box-shadow: 0px 0px 1px #222;
+
+}
+
+div {
+border-radius: 5px;
+box-shadow: 0px 0px 5px black;
+}
+
+
+</style>
+</head>
+<body>
+<main id="tela-principal">
+<h1>Calculadora de IMC</h1>
+<form action="" method="POST"
+id="formulario"> <!-- L 13-->
+<div class="form-group">
+<label for="nome">Nome</label> <!-- L 15-->
+<br>
+<input
+type="=text"
+nome="nome"
+id="nome"
+class="input"
+autofocus
+required
+/> <!-- L 23 -->
+</div>
+<div class="form-group">
+<label for="idade">Idade</label>
+<br><!-- L 26-->
+<input
+type="number"
+min="0"
+max="130"
+nome="idade"
+id="idade"
+class="input"
+required
+/>
+</div>
+<div class="form-group"> <!-- L 37 -->
+<label for="peso">Peso</label>
+<br>
+<input
+type="number"
+step="0.01"
+min="0.0"
+max="500.0"
+nome="peso"
+id="peso"
+class="input"
+required
+/>
+</div> <!-- L 49-->
+<div class="form-group">
+<label for="altura">Altura</label>
+<br>
+<input
+type="number"
+step="0.01"
+min="0.0"
+max="2.70"
+nome="altura"
+id="altura"
+class="input"
+required
+/>
+</div> <!-- L 62 -->
+<!-- BOTOES-->
+<br>
+<div class="form-group">
+<button
+type="submit"
+class="botao"
+id="btnEnviar">
+Enviar
+</button> <!-- L 70 -->
+<button
+type="=reset"
+class="botao"
+id="btnLimpar">
+Limpar
+</button> <!-- L 76 -->
+</div>
+<br>
+
+<div class="form-group">
+<label for = "imc">IMC</label>
+<br>
+<input
+type="=number"
+nome="imc"
+id="resultadoImc"
+class="input"
+value="=0.0"
+disabLed
+/> <!-- L 87 -->
+<span id="aviso"></span>
+</div>
+</form>
+<div id="resultado">
+<h2 id="id" class="pessoa">IMC</h2>
+<p id="nome" class="pessoa"></p>
+<p id="idade" class="pessoa"></p>
+<p id="peso" class="pessoa"></p>
+<p id="altura" class="pessoa"></p>
+<p id="imc" class="pessoa"></p>
+</div> <!-- L 99 -->
+</main>
+
+<script>
+/* SELECIONE TODOS OS ELEMENTOS QUE DESEJA MANIPULAR */
+// L 5
+let formulario = document.querySelector
+('form')
+
+let cxNome = document.querySelector
+('#nome')
+
+let cxIdade = document.querySelector
+('#idade')
+
+let cxPeso = document.querySelector
+('#peso')
+
+let cxAltura = document.querySelector
+('#altura')
+
+let cxImc = document.querySelector
+('#resultadoImc')
+// L 13
+let aviso = document.querySelector
+('#aviso')
+
+let dados = document.querySelectorAll
+('.pessoa')
+
+let btnEnviar = document.querySelector
+('#btnEnviar')
+// L 17
+let btnLimpar = document.querySelector
+('#btnLimpar')
+
+/* PARA PEGAR OS DADOS QUE ESTÃO DENTRO DAS CAIXAS USE A PROPIEDADE .value MAS, ANTES DE DETERMINE UM EVENTO COMO REFERENCIA PARA PEGAR OS DADOS */
+
+/* Adicionei escutador para o btnEnviar  */
+//calcular o imc
+btnEnviar.addEventListener('click', function
+(e) {
+// pegar os valores de cada input
+// L 28
+let nome = cxNome.value
+let idade = cxIdade.value
+let peso = cxPeso.value
+let altura = cxAltura.value
+let imc = (peso / (altura * altura)).toFixed(1)
+
+// L 34
+console.log(nome)
+console.log(idade)
+console.log(peso)
+console.log(altura)
+console.log(imc)
+// L 38
+
+cxImc.value = imc
+let sit = situacaoDoPeso(imc)
+aviso.textContent = sit
+
+// L 44
+/* SAIDA DE DADOS  559*/
+
+/*
+alert(
+'Nome' + nome + '\n' +
+'Idade' + idade + 'anos\n' +
+'Peso' + peso + 'kg\n' +
+'Altura' + altura + '\n' +
+'IMC' + imc + '' +
+sit
+) */
+
+// L 55
+// criar objeto pessoa
+let pessoa = {
+nome   : nome,
+idade  : idade,
+peso   : peso,
+altura : altura,
+imc    : imc,
+sit    : sit,
+}
+
+// L 65
+console.log(pessoa)
+dados[1].textContent = pessoa.nome
+dados[2].textContent = pessoa.idade + 'anos'
+dados[3].textContent = pessoa.peso + 'kg'
+dados[4].textContent = pessoa.altura + 'm'
+dados[5].textContent = pessoa.imc + '' + pessoa.sit
+
+// L 72
+// previnir  o comportamento padrao
+e.preventDefault()
+})
+
+// L 76
+function situacaoDoPeso(imc) {
+let situacao = ''
+if (imc < 18.5) {
+situacao = 'Baixo peso'
+} else if (imc >= 18.5 && imc <= 24.9) {
+situacao = 'Peso normal'
+} else if (imc >= 25 && imc <= 29.9) {
+situacao = 'Sobrepeso'// L 83
+} else if (imc >= 35 && imc <= 39.9) {
+situacao = 'Obesidade II'
+} else if (imc >= 40) {
+situacao = 'Obesidade III'
+} else { // L 90
+situacao = 'Informe seu peso corretamente'
+}
+return situacao
+} // L 94
+</script>
+
+
+
+
+<!--
+<h1>Aplicações com JS Calculadora de IMC </h1>
+
+<script src="ex.js"></script>
+hr
+<img src="Taxis/logoFV-91.png" alt="foto">
+
+-->
+
+
+
+
+<!--
+Prof. Edson Maia
+- Curso de JavaScript
+- site: HTML DOM EVENTS
+- Fazer o Curso de Técnicas de programações
+- <img src="Taxis/logoFV-90.png" alt="foto">
+- Fazer o curso de técnica de programação
+- Ir Para o Console
+- Limpar o Console/Terminal ( Ctrl + L)
+-->
+
+<!--
+<p> A Sétima página está aqui. Se você quiser, pode acessar a <a href="ex04.html">Terceira Página</a></p>
+
+<p> A Sétima página está aqui. Se você quiser, pode acessar a <a href="ex04.html">Quarta Página</a></p>
+
+
+<p> A Sétima página está aqui. Se você quiser, pode acessar a <a href="ex05.html">Quinta Página</a></p>
+
+<p> A Sétima  página está aqui. Se você quiser, pode acessar a <a href="ex06.html">Sexta Página</a></p>
+-->
+</body>
+</html>

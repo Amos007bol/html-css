@@ -1,0 +1,229 @@
+:root {
+--cor0:#28066b;
+--cor1: #fb0202;
+
+--fonte-padrão: Arial, Verdana, helvetica, sans-serif;
+--fonte-destaque: 'Debas Neve', cursive;
+}
+
+* { /*config global p/todos elementos do HTML sem margem em cima e em baixo P,H1, etc.*/
+margin: 0px;
+padding: 0px;
+}
+
+body {
+color: white;
+/*background-color:  rgb(146, 145, 145);
+font-family: var(--fonte-padrão);
+/*border-radius: 10px 10px;/*arredondamento laterais*/
+/*margin: 0px;*/
+/*color: var(--cor1);*/
+/* to left - to right - to bottom- site adob color - background-attachment: fixed;*/
+}
+
+header {
+background-color: white;
+/*background-color: rgb(202, 198, 198);
+/*background-image: linear-gradient(to left, white 30%, rgb(149, 140, 140) );
+
+/*background-image: linear-gradient(to right, white 30%, rgb(149, 140, 140) ); */
+
+min-height: 150px;/*altura  */
+text-align: center;
+padding-top: 40px;/* 40px;*/
+/*padding: 10px;/* aumenta o header*/
+/*margin: 10px;/*aumenta e header*/
+/*font-family: 'Times New Roman', Times, serif;*/
+/*border-radius: 20px 20px 10px 10px;/*arredondamento laterais*/
+/* to left - to right - to bottom- site adob color - background-attachment: fixed;*/
+}
+
+/*header > div#bola {
+/*height: 100px;/* 100px*/
+/*width: 100px;/*100px*/
+/*margin:20px;/* distância da margem*/
+/*background-color: orange;*/
+/*background-color: rgb(245, 208, 208);*/
+/*border-radius: 1%;/* ou 50px; }*/
+
+/*header > div {
+/*background-color: white;
+}
+*/
+
+header > h1 {
+color: blue;
+font-family: 'Times New Roman', Times, serif;
+font-size: 3em;/*aumentando a fonte */
+font-weight: normal;
+margin-bottom: 20px; /* distância do H1 do P */
+text-shadow: 1px 1px 0px orange;
+}
+
+header > p {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 1.2em;/* aumentando a fonte */
+color: rgb(29, 146, 29);
+max-width: 600px; /*mod 2 video 39*/
+padding-right: 10px;
+padding-left: 10px;
+margin: auto;
+margin-bottom: 20px;
+text-shadow: 1px 1px 0px orange;
+text-align: center;
+}
+
+nav {
+background-color: rgb(204, 196, 196);
+/* box-shadow: 2px 2px 3px red; sombra no nav */
+/*background-image: linear-gradient(to right, white 30%, rgb(149, 140, 140) );
+/*background-color: rgb(102, 102, 102);*/
+/*background-color: rgb(102, 102, 102);*/
+padding: 5px;/* altura */
+/*box-shadow: 0px 1px 1px black;/* sombra no nav;*/
+}
+
+nav > a {/* a filho nav link*/
+color: black;/*color: white; cor da fonte*/
+padding: 10px;
+border-radius: 5px;
+text-decoration: none; /* tira a decoração (sublinhado)*/
+font-weight: bold;
+
+/*transition-duration: 1s;*/
+/*font-weight: bolder;*/
+/*margin-right: 10px;/*distância entre os links*/
+}
+
+nav > a:hover {
+background-color: darkgrey;
+color: rgb(232, 227, 227);
+}
+
+main { /*código principal */
+min-width: 300px;
+max-width: 1000px;
+margin: auto;
+margin-bottom: 30px;
+/*background-color: rgb(214, 205, 205); */
+box-shadow: 0px 0px 10px  rgba(71, 97, 199, 0.422);
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+/*border-radius: 20px 20px 10px 10px;/*arredondamento laterais*/
+/*width: 800px;*/
+/*padding: 20px;/*aumenta o código principal*/
+
+}
+
+main h1 {
+color: rgb(83, 138, 28);
+font-family: Arial, Helvetica, sans-serif;
+font-weight: normal;
+font-size: 1.8em;
+}
+
+main h2 {
+font-family: Arial, Helvetica, sans-serif;
+color: rgb(163, 85, 85);
+font-size: 1.3em;
+font-weight: normal;
+background-image: linear-gradient(to right, darkgrey, transparent);
+text-indent: 8px;
+}
+
+h3 {
+color: blue;
+/*background-image: linear-gradient(to right, darkgrey, transparent); */
+padding: 5px;
+margin: -10px -10px 0px -10px;
+
+}
+
+p {
+color: black;
+margin: 10px 0px 10px 0px;/*margem: cima, lad dir, baixo, lad esq. */
+text-align: justify;/* arrumando as (p) dentro main*/
+text-indent: 30px;/*recuo do (p) no texto */
+/*line-height: 1em;/*espaço entre linha e outra de dist */
+/*font-size: 1em; /* Aumento das fontes */
+}
+
+ul {
+margin: auto;
+}
+
+main img {
+width: 30%;
+display: block;
+margin: auto;
+}
+
+main img.pequena {
+max-width: 350px;
+display: block; /* centralizar img */
+margin: auto;
+/*width: 50%;*/
+}
+
+div.video {
+background-color: lightgrey;
+margin: 0px -20px 30px -20px;
+padding: 20px;
+padding-bottom: 50%;
+position: relative;
+/*margin-bottom: 30px;*/
+}
+
+div.video > iframe {
+position: absolute;
+top: 5%;
+left: 5%;
+width: 80%;
+height: 80%;
+}
+
+article{
+background-color: lightgrey;
+padding: 5px;
+}
+
+aside {
+background-color: lightgrey;
+padding: 10px;
+border-radius: 10px;
+}
+
+aside > ul {
+list-style-type: '\2714\00A0';
+list-style-position: inside;
+columns: 2;
+color: rgb(101, 84, 84);
+}
+
+footer {
+background-color: black;
+color: white;
+text-align: center;
+font-size: 0.8em;
+padding: 5px;
+
+}
+
+footer  a {
+color: white;
+font-weight: bolder;
+text-decoration: none;
+}
+
+footer a:hover {
+text-decoration: underline;
+}
+
+/*
+- H1 text-align: center; (Centralizando)
+- H2 text-align: right; (leva P/ LDO Dir )
+- P text-align: justify; ( arruma o P )
+- P text-indent: 20px; (inicio de P na frente)
+- Modele de Site Mod 2  video 26
+- Envelopar: Ctrl + chift + p
+*/
