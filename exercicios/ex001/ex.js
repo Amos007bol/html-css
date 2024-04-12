@@ -718,5 +718,3 @@ console.log("Outro Olá Mundo!") // 2º Ex.esta inf. está no console
 //fim Video 1
 
 // Prof ED Maia Curso JS
-
-
