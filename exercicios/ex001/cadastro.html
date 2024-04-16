@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="Taxis/logo 300.jpg" type="image/x-icon">
+<!-- <link rel="stylesheet" href="style.css">-->
+<title>Cadastro</title>
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-shadow: 0;
+font-family: sans-serif;
+}
+body {
+/* background-color: dimgray;
+background-color: royalblue;
+background-image: url(Taxis/fastvia\ 1000.png);
+*/
+background-image: url(Taxis/foto\ rio\ 1000.jpg);
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: 100% 100%;
+}
+.form {
+background: #d3d3d3;
+width: 50%;
+height: 70%;
+margin: auto;
+text-align: center;
+border: 2px solid #069;
+border-radius: 10px;
+margin-top: 50px;
+}
+h1 {
+background: #069;
+}
+input,select {
+border-radius: 10px;
+height: 30px;
+border: none;
+}
+input[type="submit"] {
+cursor: pointer;
+border-radius: 5px;
+border: none;
+width: 80px;/* 80px;*/
+height: 35px;
+}
+input[type="button"] {
+cursor: pointer;
+border-radius: 5px;
+border: none;
+width: 80px; /* 80px; */
+height: 35px;
+}
+input[type="submit"]:hover {
+background: #069;
+color: #fff;
+}
+input[type="button"]:hover {
+background: #069;
+color: #fff;
+}
+/* HEADER  */
+header {
+/* background-color: white; */
+/*background-color: rgb(202, 198, 198);
+/*background-image: linear-gradient(to left, white 30%, rgb(149, 140, 140) );
+
+/*background-image: linear-gradient(to right, white 30%, rgb(149, 140, 140) ); */
+
+min-height: 150px;/*altura  */
+text-align: center;
+padding-top: 40px;/* 40px;*/
+/*padding: 10px;/* aumenta o header*/
+/*margin: 10px;/*aumenta e header*/
+/*font-family: 'Times New Roman', Times, serif;*/
+/*border-radius: 20px 20px 10px 10px;/*arredondamento laterais*/
+/* to left - to right - to bottom- site adob color - background-attachment: fixed;*/
+}
+
+header > h1 {
+color: blue;
+font-family: 'Times New Roman', Times, serif;
+font-size: 3em;/*aumentando a fonte */
+font-weight: normal;
+margin-bottom: 20px; /* distância do H1 do P */
+text-shadow: 1px 1px 0px orange;
+}
+
+header > p {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 1.2em;/* aumentando a fonte */
+color: rgb(29, 146, 29);
+max-width: 600px; /*mod 2 video 39*/
+padding-right: 10px;
+padding-left: 10px;
+margin: auto;
+margin-bottom: 20px;
+text-shadow: 1px 1px 0px orange;
+text-align: center;
+}
+
+nav {
+background-color: rgb(204, 196, 196);
+/* box-shadow: 2px 2px 3px red; sombra no nav */
+/*background-image: linear-gradient(to right, white 30%, rgb(149, 140, 140) );
+/*background-color: rgb(102, 102, 102);*/
+/*background-color: rgb(102, 102, 102);*/
+padding: 5px;/* altura */
+/*box-shadow: 0px 1px 1px black;/* sombra no nav;*/
+}
+
+nav > a {/* a filho nav link*/
+color: black;/*color: white; cor da fonte*/
+padding: 10px;
+border-radius: 5px;
+text-decoration: none; /* tira a decoração (sublinhado)*/
+font-weight: bold;
+
+/*transition-duration: 1s;*/
+/*font-weight: bolder;*/
+/*margin-right: 10px;/*distância entre os links*/
+}
+
+nav > a:hover {
+background-color: darkgrey;
+color: rgb(232, 227, 227);
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<!--
+<h1> Meu 1º  Site</h1>
+<img src="Taxis/logo 300.jpg" alt="logo">
+<h1>Transporte & Documentações</h1>
+--///  <header> ///
+
+<p>Transporte & Documentações: </p>
+
+<nav>
+<a href="home.html">Home</a>
+<a href="empresa.html">Empresa</a>
+<a href="noticias.html">Notícias</a>
+<a href="faleconosco.html">Fale Conosco</a>
+<a href="cadastro.html">Cadastro</a>
+</nav>
+
+<p> A página Cadastro está aqui. Se você quiser, pode acessar a <a href="index.html">Index.Html</a></p>
+-->
+
+<!-- Videos da : Web Online Desenvolve -->
+<div class="form"> <!-- L 10-->
+<form method="=post" action="index.php"><br>
+<!-- <h1>Sistema de Clientes</h1><br> -->
+<h1>Cadastro de Clientes:</h1><br><br>
+<label for="nome">Nome</label>
+<input type="text"size="40"placeholder="nome completo"> <!--40-->
+<label for="cpf">CPF:</label><!-- br L 16 -->
+<input type="text" placeholder="231.231.321-11"><br><br>
+<label for="email">Email:</label>
+<input type="text"size="40"placeholder="email valido"><!--40-->
+<label for="rg">RG:</label>
+<input type="text"placeholder="147.147.147.11"><br><br>
+<label for="sexo">Sexo:</label> <!-- L 22 &nbsp;-->
+<label for="mas">Masculino</label>
+<input type="radio" name="opcao" id="op1">
+<label for="fem">Feminino</label>
+<input type="radio" name="opcao" id="op1"> <!-- L 26 -->
+<label for="outro">Outros</label>
+<input type="radio" name="opcao" id="op1"><br><br>
+<label for="data">Data de  Nascimento:</label>
+<input type="date" name="data" id="data"> <!-- L 88 -->
+<h2>Endereço</h2><br><br>
+<label for="uf">Estado:</label>
+<select name="estado" id="uf">
+<option value="0">Escolha sua Região</option>
+<optgroup label="norte">
+<option value="1">Acre</option>
+<option value="2">Amazonas</option>
+<option value="3">Amapá</option>
+<option value="4">Pará</option>
+<option value="5">Rondônia</option>
+<option value="6">Roraima</option>
+<option value="7">Tocantins</option>
+</optgroup>
+<optgroup label="nordeste">
+<option value="8">Alagoas</option>
+<option value="9">Bahia</option>
+<option value="10">Ceará</option>
+<option value="11">Maranhão</option>
+<option value="12">Piauí</option>
+<option value="13">Pernambuco</option>
+<option value="14">Paraíba</option>
+<option value="15">Rio Grande do Norte</option>
+<option value="16">Sergipe</option> <!-- L 51 -->
+</optgroup>
+<optgroup label="centro-oeste">
+<option value="17">Goiais</option>
+<option value="18">Mato Grosso </option>
+<option value="19">Mato Grosso do Sul</option>
+<option value="20">Distrito Federal</option>
+</optgroup>
+<optgroup label="sudeste"> <!-- L 59-->
+<option value="21">Espirito Santo</option>
+<option value="22">Minas Gerais</option>
+<option value="23">Rio de Janeiro</option>
+<option value="24">São Paulo</option>
+</optgroup>
+
+<optgroup label="sul">
+<option value="25">Paraná</option>
+<option value="26">Rio Grande do Sul</option>
+<option value="27">Santa Catarina</option>
+</optgroup>
+</select>
+<label for="cidade">Cidade:</label>
+<input type="text"placeholder="cidade"><br><br>
+<label for="cep">CEP:</label>
+<input type="text"placeholder="21365-001">
+<label for="bairro">Bairro:</label>
+<input type="text"placeholder="bairro"><br><br>
+<label for="rua">Rua:</label>
+<input type="text"size="30"placeholder="logradouro">
+<label for="nu">Número</label>
+<input type="text"size="5"placeholder="numero"><br><br>
+<label for="comp">Complemento:</label>
+<input type="text"size="30"placeholder="andar, apartamento, bloco"><br><br>
+<input type="submit" value="enviar"> <!-- L 84 &nbsp; &nbsp;-->
+<input type="button" value="voltar"> <br><br>
+</form>
+</div>
+
+<nav>
+<a href="home.html">Home</a>
+<a href="empresa.html">Empresa</a>
+<a href="noticias.html">Notícias</a>
+<a href="contato.html">Contato</a>
+<a href="cadastro.html">Cadastro</a>
+</nav>
+
+</header>
+
+
+
+<!--
+<footer>
+<p>Site criado por<a href="https://fastvisa.com.br" target="_blank">Amós Almeida </a>Para Serviço da <a href="https://fastvisa.com.br" target="_blank">Fast Visa</a></p>
+</footer>
+
+<p> A página Cadastro está aqui. Se você quiser, pode acessar a <a href="index.html">Index.Html</a></p>
+
+<p> A página Cadastro está aqui. Se você quiser, pode acessar a <a href="home.html">Home</a></p>
+
+<p> A página Cadastro está aqui. Se você quiser, pode acessar a <a href="noticias.html">Notícias</a></p>
+
+<p> A página Cadastro está aqui. Se você quiser, pode acessar a <a href="faleconosco.html">Fale Conosco</a></p>
+
+<p> A página Cadastro está aqui. Se você quiser, pode acessar a <a href="ex10.html">Login</a></p>
+-->
+</body>
+</html>

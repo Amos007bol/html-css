@@ -3,90 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ex09 form </title>
-</head>
+<title>Cadastro</title>
 <style>
-* {
-margin: 0;
-padding: 0;
-box-shadow: 0;
-font-family: sans-serif;
-}
 body {
-/* background-color: dimgray;
-background-color: royalblue;
-background-image: url(Taxis/fastvia\ 1000.png);
-*/
-background-image: url(Taxis/foto\ rio\ 1000.jpg);
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-size: 100% 100%;
+font-family: Arial, Helvetica, sans-serif;
+/* background-image: linear-gradient(45deg, cyan, yellow); */
+background-color: darkgray;
 }
-.form {
-background: #d3d3d3;
-width: 50%;
-height: 70%;
-margin: auto;
-text-align: center;
-border: 2px solid #069;
-border-radius: 10px;
-margin-top: 50px;
-}
-h1 {
-background: #069;
-}
-input,select {
-border-radius: 10px;
-height: 30px;
-border: none;
-}
-input[type="submit"] {
-cursor: pointer;
-border-radius: 5px;
-border: none;
-width: 80px;/* 80px;*/
-height: 35px;
-}
-input[type="button"] {
-cursor: pointer;
-border-radius: 5px;
-border: none;
-width: 80px; /* 80px; */
-height: 35px;
-}
-input[type="submit"]:hover {
-background: #069;
-color: #fff;
-}
-input[type="button"]:hover {
-background: #069;
-color: #fff;
-}
-
 </style>
+</head>
 <body>
 <!-- Videos da : Web Online Desenvolve -->
-<div class="form"> <!-- L 10-->
+<div class="form">
 <form method="=post" action="index.php"><br>
 <h1>Sistema de Clientes</h1><br>
 <h2>Cadastro</h2><br><br>
 <label for="nome">Nome</label>
-<input type="text"size="40"placeholder="nome completo"> <!--40-->
-<label for="cpf">CPF:</label><!-- br L 16 -->
+<input type="text"size="40"placeholder="nome completo">
+<label for="cpf">CPF:</label>
 <input type="text" placeholder="231.231.321-11"><br><br>
 <label for="email">Email:</label>
-<input type="text"size="40"placeholder="email valido"><!--40-->
+<input type="text"size="40"placeholder="email valido">
 <label for="rg">RG:</label>
 <input type="text"placeholder="147.147.147.11"><br><br>
-<label for="sexo">Sexo:</label> <!-- L 22 &nbsp;-->
+<label for="sexo">Sexo:</label>
 <label for="mas">Masculino</label>
 <input type="radio" name="opcao" id="op1">
 <label for="fem">Feminino</label>
-<input type="radio" name="opcao" id="op1"> <!-- L 26 -->
+<input type="radio" name="opcao" id="op1">
 <label for="outro">Outros</label>
 <input type="radio" name="opcao" id="op1"><br><br>
 <label for="data">Data de  Nascimento:</label>
-<input type="date" name="data" id="data"> <!-- L 88 -->
+<input type="date" name="data" id="data">
 <h2>Endereço</h2><br><br>
 <label for="uf">Estado:</label>
 <select name="estado" id="uf">
@@ -109,7 +57,7 @@ color: #fff;
 <option value="13">Pernambuco</option>
 <option value="14">Paraíba</option>
 <option value="15">Rio Grande do Norte</option>
-<option value="16">Sergipe</option> <!-- L 51 -->
+<option value="16">Sergipe</option>
 </optgroup>
 <optgroup label="centro-oeste">
 <option value="17">Goiais</option>
@@ -117,7 +65,7 @@ color: #fff;
 <option value="19">Mato Grosso do Sul</option>
 <option value="20">Distrito Federal</option>
 </optgroup>
-<optgroup label="sudeste"> <!-- L 59-->
+<optgroup label="sudeste">
 <option value="21">Espirito Santo</option>
 <option value="22">Minas Gerais</option>
 <option value="23">Rio de Janeiro</option>
@@ -142,10 +90,28 @@ color: #fff;
 <input type="text"size="5"placeholder="numero"><br><br>
 <label for="comp">Complemento:</label>
 <input type="text"size="30"placeholder="andar, apartamento, bloco"><br><br>
-<input type="submit" value="enviar"> <!-- L 84 &nbsp; &nbsp;-->
+<input type="submit" value="enviar">
 <input type="button" value="voltar"> <br><br>
 </form>
 </div>
+
+<!--
+- Linguagem:Python
+- Linguagem: C
+- Linguagem: C Sharp
+- Linguagem: Android Studio com Java
+- Linguagem: Kotlin
+- Curso: JavaScript
+- Curso de PHP Video 11
+- Site: php.net  / documentation
+- Site: PHP Sandbox
+- site: w3techs
+- Configurações importantes para VS Code - Video de PHP
+- Aulas conhecimento de PHP Videos : 1 à 10
+- curso em video.com
+- alternativeTo.net
+-
+-->
 
 </body>
 </html>

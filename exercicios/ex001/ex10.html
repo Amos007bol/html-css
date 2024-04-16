@@ -3,7 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PHP</title>
+<title>Form Login</title>
+
+<style>
+body {
+font-family: Arial, Helvetica, sans-serif;
+/* background-image: linear-gradient(45deg, cyan, yellow); */
+background-color: darkgray;
+}
+
+.tela-login {
+background-color: rgba(0, 0, 0, 0.8);
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+padding: 80px;
+border-radius: 10px;
+color: wheat;
+}
+
+input {
+padding: 10px;
+border: none;
+/*outline: none; - tira a borda interna */
+font-size: 15px;
+}
+
+button {
+background-color: orange; /* dodgerblue; */
+/* border: none; */
+padding: 10px;
+width: 100%;
+border-radius: 10px;
+color: black;
+/* cursor: pointer; */
+}
+
+button:hover{
+background-color: rgb(151, 123, 69);
+cursor: pointer;
+}
+</style>
 </head>
 <body>
 
@@ -24,9 +65,51 @@
 - alternativeTo.net
 -
 -->
-<h1> Dados de Servidor - Curso de Linguagem: PHP</h1>
-<?php
-phpinfo();
-?>
+
+<h1> Formulário de Login:</h1>
+
+<div class="tela-login">
+<h1>Login</h1>
+<input type="text" placeholder="nome">
+<br><br>
+<input type="password" placeholder="senha">
+<br><br>
+<button>Enviar</button>
+</div>
+
+<!--
+<footer>
+<p>Site criado por<a href="https://fastvisa.com.br" target="_blank">Amós Almeida </a>Para Serviço da <a href="https://fastvisa.com.br" target="_blank">Fast Visa</a></p>
+</footer>
+
+<p> A página Login está aqui. Se você quiser, pode acessar a <a href="index.html">Index.Html</a></p>
+
+<p> A página Login está aqui. Se você quiser, pode acessar a <a href="home.html">Home</a></p>
+
+<p> A página Login está aqui. Se você quiser, pode acessar a <a href="noticias.html">Notícias</a></p>
+
+<p> A página Login está aqui. Se você quiser, pode acessar a <a href="contato.html">Fale Conosco</a></p>
+
+<p> A página Login está aqui. Se você quiser, pode acessar a <a href="cadastro.html">Fale Conosco</a></p>
+
+-->
+
+<!--
+- Linguagem:Python
+- Linguagem: C
+- Linguagem: C Sharp
+- Linguagem: Android Studio com Java
+- Linguagem: Kotlin
+- Curso: JavaScript
+- Curso de PHP Video 11
+- Site: php.net  / documentation
+- Site: PHP Sandbox
+- site: w3techs
+- Configurações importantes para VS Code - Video de PHP
+- Aulas conhecimento de PHP Videos : 1 à 10
+- curso em video.com
+- alternativeTo.net
+-
+-->
 </body>
 </html>
