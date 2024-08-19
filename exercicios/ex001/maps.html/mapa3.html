@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa3</title>
+</head>
+<body>
+
+    
+<!--
+<iframe
+width=*310*
+height=*312*
+frameborder=*0*  style=*border:0*
+
+https://maps.googleapis.com/maps/api/distancematrix/json
+key=AIzaSyAo5AKHnvnIHBHUOuqNyy2Dxv9wGjOKY4&language=pt&origin=
+SearchBox Partida's value&Destination=SearchBox
+Destino's value*>
+</iframe>-->
+
+    <br>
+    <h2>15º Deslocamento diário e transporte público (Rotas e planejamento de viagem única)</h2>
+
+<br>
+<h2>16º Converter coordenadas em um endereço (Receber informações do local atual) </h2>
+<!DOCTYPE html>
+<!--
+ @license
+ Copyright 2024 Google LLC. All Rights Reserved.
+ SPDX-License-Identifier: Apache-2.0
+-->
+<html>
+  <head>
+    <title>Reverse Geocoding</title>
+    <script>
+      /**
+       * @license
+       * Copyright 2024 Google LLC. All Rights Reserved.
+       * SPDX-License-Identifier: Apache-2.0
+       */
+
+      function initMap() {
+        const geocoder = new google.maps.Geocoder();
+        const map = document.querySelector('gmp-map').innerMap;
+        const infoWindow = new google.maps.InfoWindow();
+
+        document.getElementById('submit').addEventListener('click', () => {
+          geocodeLatLng(geocoder, map, infoWindow);
+        });
+      }
+
+      async function geocodeLatLng(geocoder, map, infoWindow) {
+        const input = document.getElementById('latlng').value;
+        const latlngStr = input.split(',', 2);
+        const latlng = {
+          lat: parseFloat(latlngStr[0]),
+          lng: parseFloat(latlngStr[1]),
+        };
+
+        try {
+          const response = await geocoder.geocode({location: latlng});
+          const marker = document.querySelector('gmp-advanced-marker');
+
+          map.setZoom(11);
+          marker.position = latlng;
+          infoWindow.setContent(response.results[0].formatted_address);
+          infoWindow.open({anchor: marker});
+        } catch (e) {
+          window.alert(`Geocoder failed due to: ${e}`);
+        }
+      }
+
+      window.initMap = initMap;
+    </script>
+    <style>
+      /**
+       * @license
+       * Copyright 2024 Google LLC. All Rights Reserved.
+       * SPDX-License-Identifier: Apache-2.0
+       */
+
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+
+      #floating-panel {
+        background-color: white;
+        border: 1px solid #999;
+        line-height: 30px;
+        margin: 5px;
+        padding: 5px;
+        text-align: center;
+        width: 350px;
+      }
+
+      #latlng {
+        width: 225px;
+      }
+    </style>
+  </head>
+  <body>
+    <gmp-map center="40.731,-73.997" zoom="8" map-id="DEMO_MAP_ID">
+      <div id="floating-panel" slot="control-block-start-inline-center">
+        <input id="latlng" type="text" value="40.714224,-73.961452"/>
+        <input id="submit" type="button" value="Reverse Geocode"/>
+      </div>
+      <gmp-advanced-marker></gmp-advanced-marker>
+    </gmp-map>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=INSERT_YOUR_API_KEY&callback=initMap&libraries=marker&v=beta&solution_channel=GMP_CCS_reversegeocoding_v3"
+      defer
+    ></script>
+
+<br>
+<h2>17º Mostrar rotas em texto (Rotas e planejamento de viagem única)</h2>
+<!DOCTYPE html>
+<!--
+ @license
+ Copyright 2019 Google LLC. All Rights Reserved.
+ SPDX-License-Identifier: Apache-2.0
+-->
+<html>
+  <head>
+    <title>Displaying Text Directions With setPanel()</title>
+    <script>
+      /**
+       * @license
+       * Copyright 2019 Google LLC. All Rights Reserved.
+       * SPDX-License-Identifier: Apache-2.0
+       */
+      function initMap() {
+        const directionsRenderer = new google.maps.DirectionsRenderer();
+        const directionsService = new google.maps.DirectionsService();
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 7,
+          center: { lat: 41.85, lng: -87.65 },
+          disableDefaultUI: true,
+        });
+
+        directionsRenderer.setMap(map);
+        directionsRenderer.setPanel(document.getElementById("sidebar"));
+
+        const control = document.getElementById("floating-panel");
+
+        map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
+
+        const onChangeHandler = function () {
+          calculateAndDisplayRoute(directionsService, directionsRenderer);
+        };
+
+        document
+          .getElementById("start")
+          .addEventListener("change", onChangeHandler);
+        document
+          .getElementById("end")
+          .addEventListener("change", onChangeHandler);
+        document
+          .getElementById("mode")
+          .addEventListener("change", onChangeHandler);
+      }
+
+      function calculateAndDisplayRoute(directionsService, directionsRenderer) {
+        const start = document.getElementById("start").value;
+        const end = document.getElementById("end").value;
+        const selectedMode = document.getElementById("mode").value;
+
+        directionsService
+          .route({
+            origin: start,
+            destination: end,
+            travelMode: google.maps.TravelMode[selectedMode],
+          })
+          .then((response) => {
+            directionsRenderer.setDirections(response);
+          })
+          .catch((e) =>
+            window.alert("Directions request failed due to " + status)
+          );
+      }
+
+      window.initMap = initMap;
+    </script>
+    <style>
+      /**
+       * @license
+       * Copyright 2019 Google LLC. All Rights Reserved.
+       * SPDX-License-Identifier: Apache-2.0
+       */
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #container {
+        height: 100%;
+        display: flex;
+      }
+
+      #sidebar {
+        flex-basis: 15rem;
+        flex-grow: 1;
+        padding: 1rem;
+        max-width: 30rem;
+        height: 100%;
+        box-sizing: border-box;
+        overflow: auto;
+      }
+
+      #map {
+        flex-basis: 0;
+        flex-grow: 4;
+        height: 100%;
+      }
+
+      #floating-panel {
+        position: absolute;
+        top: 10px;
+        left: 25%;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: "Roboto", "sans-serif";
+        line-height: 30px;
+        padding-left: 10px;
+      }
+
+      #floating-panel {
+        background-color: #fff;
+        border: 0;
+        border-radius: 2px;
+        box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+        margin: 10px;
+        padding: 0 0.5em;
+        font: 400 18px Roboto, Arial, sans-serif;
+        overflow: hidden;
+        padding: 5px;
+        font-size: 14px;
+        text-align: center;
+        line-height: 30px;
+        height: auto;
+      }
+
+      #map {
+        flex: auto;
+      }
+
+      #sidebar {
+        flex: 0 1 auto;
+        padding: 0;
+      }
+      #sidebar > div {
+        padding: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="floating-panel">
+      <strong>Start:</strong>
+      <select id="start">
+        <option value="chicago, il">Chicago</option>
+        <option value="st louis, mo">St Louis</option>
+        <option value="joplin, mo">Joplin, MO</option>
+        <option value="oklahoma city, ok">Oklahoma City</option>
+        <option value="amarillo, tx">Amarillo</option>
+        <option value="gallup, nm">Gallup, NM</option>
+        <option value="flagstaff, az">Flagstaff, AZ</option>
+        <option value="winona, az">Winona</option>
+        <option value="kingman, az">Kingman</option>
+        <option value="barstow, ca">Barstow</option>
+        <option value="san bernardino, ca">San Bernardino</option>
+        <option value="los angeles, ca">Los Angeles</option>
+      </select>
+      <br />
+      <strong>End:</strong>
+      <select id="end">
+        <option value="chicago, il">Chicago</option>
+        <option value="st louis, mo">St Louis</option>
+        <option value="joplin, mo">Joplin, MO</option>
+        <option value="oklahoma city, ok">Oklahoma City</option>
+        <option value="amarillo, tx">Amarillo</option>
+        <option value="gallup, nm">Gallup, NM</option>
+        <option value="flagstaff, az">Flagstaff, AZ</option>
+        <option value="winona, az">Winona</option>
+        <option value="kingman, az">Kingman</option>
+        <option value="barstow, ca">Barstow</option>
+        <option value="san bernardino, ca">San Bernardino</option>
+        <option value="los angeles, ca">Los Angeles</option>
+      </select>
+      <br />
+      <b>Mode of Travel: </b>
+      <select id="mode">
+        <option value="DRIVING">Driving</option>
+        <option value="WALKING">Walking</option>
+        <option value="BICYCLING">Bicycling</option>
+        <option value="TRANSIT">Transit</option>
+      </select>
+    </div>
+    <div id="container">
+      <div id="map"></div>
+      <div id="sidebar"></div>
+    </div>
+    <div style="display: none">
+      <div id="floating-panel">
+        <strong>Start:</strong>
+        <select id="start">
+          <option value="chicago, il">Chicago</option>
+          <option value="st louis, mo">St Louis</option>
+          <option value="joplin, mo">Joplin, MO</option>
+          <option value="oklahoma city, ok">Oklahoma City</option>
+          <option value="amarillo, tx">Amarillo</option>
+          <option value="gallup, nm">Gallup, NM</option>
+          <option value="flagstaff, az">Flagstaff, AZ</option>
+          <option value="winona, az">Winona</option>
+          <option value="kingman, az">Kingman</option>
+          <option value="barstow, ca">Barstow</option>
+          <option value="san bernardino, ca">San Bernardino</option>
+          <option value="los angeles, ca">Los Angeles</option>
+        </select>
+        <br />
+        <strong>End:</strong>
+        <select id="end">
+          <option value="chicago, il">Chicago</option>
+          <option value="st louis, mo">St Louis</option>
+          <option value="joplin, mo">Joplin, MO</option>
+          <option value="oklahoma city, ok">Oklahoma City</option>
+          <option value="amarillo, tx">Amarillo</option>
+          <option value="gallup, nm">Gallup, NM</option>
+          <option value="flagstaff, az">Flagstaff, AZ</option>
+          <option value="winona, az">Winona</option>
+          <option value="kingman, az">Kingman</option>
+          <option value="barstow, ca">Barstow</option>
+          <option value="san bernardino, ca">San Bernardino</option>
+          <option value="los angeles, ca">Los Angeles</option>
+        </select>
+      </div>
+    </div>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=INSERT_YOUR_API_KEY&callback=initMap&v=weekly&solution_channel=GMP_CCS_textdirections_v2"
+      defer
+    ></script>
+
+<br>
+<h2>18º Adicionar eventos de clique ao mapa (Personalizar mapa) </h2>
+<!DOCTYPE html>
+<!--
+ @license
+ Copyright 2019 Google LLC. All Rights Reserved.
+ SPDX-License-Identifier: Apache-2.0
+-->
+<html>
+  <head>
+    <title>Simple Click Events</title>
+    <script>
+      /**
+       * @license
+       * Copyright 2019 Google LLC. All Rights Reserved.
+       * SPDX-License-Identifier: Apache-2.0
+       */
+      function initMap() {
+        const myLatlng = { lat: -25.363, lng: 131.044 };
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 4,
+          center: myLatlng,
+        });
+        const marker = new google.maps.Marker({
+          position: myLatlng,
+          map,
+          title: "Click to zoom",
+        });
+
+        map.addListener("center_changed", () => {
+          // 3 seconds after the center of the map has changed, pan back to the
+          // marker.
+          window.setTimeout(() => {
+            map.panTo(marker.getPosition());
+          }, 3000);
+        });
+        marker.addListener("click", () => {
+          map.setZoom(8);
+          map.setCenter(marker.getPosition());
+        });
+      }
+
+      window.initMap = initMap;
+    </script>
+    <style>
+      /**
+       * @license
+       * Copyright 2019 Google LLC. All Rights Reserved.
+       * SPDX-License-Identifier: Apache-2.0
+       */
+      /* 
+       * Always set the map height explicitly to define the size of the div element
+       * that contains the map. 
+       */
+      #map {
+        height: 100%;
+      }
+
+      /*
+       * Optional: Makes the sample page fill the window.
+       */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <!--
+     The 'defer' attribute causes the callback to execute after the full HTML
+     document has been parsed. For non-blocking uses, avoiding race conditions,
+     and consistent behavior across browsers, consider loading using Promises
+     with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+    -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=INSERT_YOUR_API_KEY&callback=initMap&v=weekly&solution_channel=GMP_CCS_simpleclickevents_v2"
+      defer
+    ></script>
+
+
+<br>
+<h2>19º Criar janelas de informações (HTML) (Mostrar lugares por perto e os detalhes deles)</h2>
+<!doctype html>
+<!--
+ @license
+ Copyright 2023 Google LLC. All Rights Reserved.
+ SPDX-License-Identifier: Apache-2.0
+-->
+<html>
+  <head>
+    <title>Info Windows</title>
+    <script>
+      /**
+       * @license
+       * Copyright 2023 Google LLC. All Rights Reserved.
+       * SPDX-License-Identifier: Apache-2.0
+       */
+
+      // This example displays a marker at the center of Australia.
+      // When the user clicks the marker, an info window opens.
+      async function initMap() {
+        const contentString = `
+          <div>
+            <h1>Uluru</h1>
+            <div>
+              <p>
+                <b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large
+                sandstone rock formation in the southern part of the
+                Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi)
+                south west of the nearest large town, Alice Springs; 450&#160;km
+                (280&#160;mi) by road. Kata Tjuta and Uluru are the two major
+                features of the Uluru - Kata Tjuta National Park. Uluru is
+                sacred to the Pitjantjatjara and Yankunytjatjara, the
+                Aboriginal people of the area. It has many springs, waterholes,
+                rock caves and ancient paintings. Uluru is listed as a World
+                Heritage Site.
+              </p>
+              <p>
+                Attribution: Uluru,
+                <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">
+                  https://en.wikipedia.org/w/index.php?title=Uluru
+                </a>
+                (last visited June 22, 2009).
+              </p>
+            </div>
+          </div>`;
+        const infoWindow = new google.maps.InfoWindow({
+          content: contentString,
+          ariaLabel: "Uluru",
+        });
+
+        const marker = document.querySelector('gmp-advanced-marker');
+        marker.addEventListener('gmp-click', () => {
+          infoWindow.open({anchor: marker});
+        });
+      }
+
+      window.initMap = initMap;
+    </script>
+    <style>
+      /**
+       * @license
+       * Copyright 2023 Google LLC. All Rights Reserved.
+       * SPDX-License-Identifier: Apache-2.0
+       */
+
+      /*
+       * Optional: Makes the sample page fill the window.
+       */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <gmp-map center="-25.363, 131.044" zoom="4" map-id="DEMO_MAP_ID">
+      <gmp-advanced-marker position="-25.363, 131.044" title="Uluru" gmp-clickable></gmp-advanced-marker>
+    </gmp-map>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=INSERT_YOUR_API_KEY&callback=initMap&libraries=marker&v=beta&solution_channel=GMP_CCS_infowindows_v2"
+      defer
+    ></script>
+
+</body>
+</html>
