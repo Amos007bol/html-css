@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2xjs002</title>
+
+    <style> /* CSS - Estilo*/
+        body {
+            background-color: darkgrey;
+            color: white;
+            font: normal 20pt Arial;
+        }
+
+        h1 {
+           color: rgb(241, 201, 126); 
+        }
+    </style>
+</head>
+<body>
+     
+</head>
+<body>
+    <!-- HTML - Corpo Texto, IMG,  -->
+    <h1>Olá Mundo!</h1>
+    <p>Já me livrei da maldição</p>
+    <p>Curso JS Video 1 À 7 MOD A ( Curso de JavaScript - Teaser - Curso Grátis de JavaScript Moderno - MOD A: ( Conhecendo JS ) - O Que o JS é capaz de fazer? - JS Como chegamos até aqui? - Dando os primeiros passos - Criando o primeiro scrpt  )  </p>
+   
+    <script> 
+     // Programação 
+     // window.alert('Minha primeira mensagem') 
+     //  window.confirm('Esta gostando do JS')
+      //  window.prompt('Qual é seu nome?')
+
+         
+  // 1º PROGRAMA
+   var nome = window.prompt('Qual é seu nome ')
+   document.write (`Olá, <strong> ${nome}</strong>! Seu nome tem ${nome.length} letras <br>`)
+   document.write (`Seu nome em maiusculos é ${nome.toUpperCase()}<br>`)
+   document.write (`Seu nome em minusculos é ${nome.toLowerCase()}`)
+
+
+
+// VAR, LET OU CONST (OBS. PODEMOS UTILIZAR UMA DESSAS VARIÁVEIS - VIDEO 6 - 08:20 JS)  
+// EX: ACIMA ESTÁ CORRETO
+// VIDEO 6 MOD B AS 30:00 
+// TRATAMENTO DE DADOS JS
+// SABER NUMERO DE LETRAS NO NOME
+//      FORMATANDO STRING
+ // EX. ACIMA 
+ // Utilizaremos Bastante este formato
+// var s = 'JavaScript' - (aspas simples)
+// 'Eu estou aprendendo s' (Não faz interpolação)
+// "Eu estou aprendendo" + s (usa concatenação)
+// `Eu estou aprendendo ${s}` (usa templete string (crase ``))
+// s.length  (Mostra quantos  caracteres a string tem)
+// s.toUpperCase()  (TUDO PARA "MAIÚSCULAS" )
+// S.toLowerCase()  (TUDO PARA "MAIÚSCULAS")
+//       FORMATANDO STRING
+// var s = 'JavaScript'
+// s.length  // Quantas caracteres a string tem
+// s.toUpperCase()  // Tudo Para "MAIÚSCULAS"
+// s.toLowerCase()  // Tudo para "MINÚSCULAS" 
+
+
+///
+  //<p>Curso JS Video 8 À 12 INICIO MOD B (Comandos Básicos - Armazenar,Tratar, Operações, Aritmética,Lógica,Relacional Dados)</p>
+
+      //    vaga a1 = carro1 // = Recebe
+      //         a1 = carro2 // vaga sai o 1 entra o carro 2
+      //         a1 = null // Deixar vaga nula (vazia)
+        
+      // Exemplos de Variáveis Dados no PC
+      // n1 ( )  var n1 = 5 // criando 3 espaços no PC
+      // n2 ( )  var n2 = 8.5 // Armazenando Dados no PC
+      // n3 ( )  var n3 = 15 // Utilizando as memórias os Valores 5, 8.5 e 15 serão colodadas na Variavel,
+
+      // Exemplos de Variáveis Tamanhos Diferentes no PC ( será posto uma cadeia de caracteres s1,2,3 String)
+      // n1 ( 5 )  var s1 = "JavaScript"// aspas duplas
+      // n2 ( 8.5 ) var s2 = 'Curso em Vídeo'// aspas simples
+      // n3 ( 15 ) var s3 = `Guanabara` // crase
+      // No JS Aspas Tem Diferenças
+
+      // Nome de cada variável chama-se (Identificador)
+      // Existem Regras Para Nomeação de Identificadores.
+      // - Podem Começar Com Letra, $ ou _
+      // - Não podem começar com Números
+      // - É Possivel Usar Letras ou Números
+      // - É Possível Usar Acentos e Símbolos
+      // - Não Podem Conter Espaçoes
+      // - Não Podem Ser Palavras Reservadas (Ex. function,alert)
+      // - MAIÚSCULAS E MINÚSCULAS FAZEM DIFERENÇA
+      // - TENTE ESCOLHER NOMES COERENTES PARA AS VARIÁVEIS
+      ///
+
+      // JS VIDEO 7: OPERADORES DO JS ( PARTI 1)
+      
+      //           ( OPERADORES )
+      //    ARITMÉTICOS
+      //    ATRIBUIÇÃO
+      //    RELACIONAIS  
+      //    LÓGICOS
+      //    TERNÁRIO
+      // OBS. EXISTEM OUTRAS FAMÍLIA DE OPERADOES NO JS
+
+      //      OPERADORES ARITMÉTICOS BINÁRIOS
+      // 5 +  2 ==>   7  P/JS É SOMA
+      // 5 -  2 ==>   3  P/JS É SUBTRAÇÃO
+      // 5 *  2 ==>  10  P/JS É MULTIPLICAÇÃO
+      // 5 /  2 ==>  2.5 P/JS É DIV. REAL
+      // 5 %  2 ==>  1   P/JS É O RESTO DIV.INT
+      // 5 ** 2 ==>  25  P/JS É A POTÊNCIA(AO QUADRADO)
+               
+      //        CUIDADO! COM USO DOS OPERADORES
+
+      // 5 + 3 / 2  OBS. NÃO É (4) E SIM 6.5
+      // 1º É A DIV  3 / 2 ==> 1.5
+      // 2º É A SOMA 5 + 1.5 ==> 6.
+
+      // MUDAR A ORDEM DE PROCEDÊNCIA NO JS USAR ()
+      // (5 + 3) / 2  ==> 4
+      // 1º É A SOMA  5 + 3 ==> 8
+      // 2º É A DIV   8 / 2 ==> 4
+      // EX. NO NODE DS
+
+      //    ORDEM DE PRECEDÊNCIA DOS OPERADORES
+      //  LINGUAGEM (JAVASCRIPT É ASSIM )
+
+      // 1º  PARÊNTESES    ()
+      // 2º  POTÊNCIAS     ** 
+      // 3º  MULTIPLICAÇÃO, DIVISÃO E O RESTO DIV (NA MESMA ORDEM DE PRECEDÊNCIA) (MAIS DE UM DELES ESTIVER NA MESMA EXPRESSÃO) SERÁ FEITO DA ESQUERDA PARA A DIREITA QUEM APARECER PRIMEIRO. 
+      // 
+      //  * MULTIPLICAÇÃO
+      //  / DIVISÃO
+      //  % RESTO DA DIV.  
+      //
+      // 4º  SOMA E SUBTRAÇÃO  
+      //  +
+      //  -
+
+      //       USAR O OPERADOR (ATRIBUIÇÃO SIMPLES) PARA GUARDAR (VIDEO 7 13:30)  
+      // EX:
+      // var a = 5 + 3      ==>  8 ( vai ficar na memória)
+
+      // var b = a % 5      ==>  3 ( " " memória)
+
+      // var c = 5 * b ** 2 ==> 45 (1º 3x3=9 2º 9x5=45 memória Obs. na ordem 1º potencia 2º multiplicação)
+
+      // var d = 10 - a / 2 ==> 6 (1º a = 8 / 2 = 4 2º 10 - 4 = 6  Obs. 1º a divisão e 2º subtração)
+
+      // var e = 6 * 2 / d ==> 2 (1º 6x2=12 2º 12/6= 2 Obs. está na mesma ordem 1º foi a multip0licação )
+
+      // var f = b % e + 4 / e ==> 3 (1º 3/2=1 resto 1 2º 4/2=2 1+2=3 Obs. 1º resto da divisão 2º soma ) 
+
+
+      //       AUTO-ATRIBUIÇÕES (VIDEO 7 17:30 JS)
+
+      // var n = 3      3 // igual a vaga de carro, entra  e sai
+
+      // n = n + 4      7 deixa de existir
+      // n = n - 5      2 deixa de existir
+      // n = n * 4      8   ""       ""
+      // n = n / 2      4   ""       ""
+      // n = n ** 2    16   ""       ""
+      // n = n % 5      1   ""       ""
+      // Obs. ISTO É AUTO ATRIBUIÇÕES 
+
+      //       SIMPLIFICANDO AS AUTO ATRIBUIÇÕES
+      // EX: ACIMA
+      // var n = 3
+      // n = n + 4   ==> n +=4:  N RECEBE ELE MESMO
+      // n = n - 5   ==> n -=5      ""     ""
+      // n = n * 4   ==> n *=4      ""     ""
+      // n = n / 2   ==> n /=2      ""     ""
+      // n = n ** 2  ==> n **=2     ""     ""
+      // n = n % 5   ==> n %=5      ""     ""
+
+      // EXERCÍCIO NO NODE DS
+      // ENTENDER ESTA SIMPLIFICAÇÕES SOUBER FAZER
+      // ESSE TIPO DE OPRAÇÕES PODE FAZER EM 
+      // LINGUAMGEM:  C , JAVA, JAVASCRIPT, PYTHON, PHP
+
+      //       OPERADORES DE INCREMENTO
+
+      // var x = 5     ==> 5  Deixa de existir 
+      // x = x + 1     ==> 6    ""       ""
+      // x = x - 1     ==> 5
+
+      //  Podemos também simplificar
+
+      // var x = 5
+      // x = x + 1   ==> x += 1
+      // x = x - 1   ==> x -= 1  
+
+      //       OPERADORES DE INCREMENTO
+
+      // var x = 5
+      // x = x + 1   ==> x ++
+      // x = x - 1   ==> x -- 
+    
+     // FIM DO VIDEO 7 OPERADORES (PARTE 1)
+
+     ///
+
+     // PROXIMO VIDEO 8 (OPERADORES PARTE 2)
+     // SERÁ NO EXJS004 
+     // PARTE 1 TERMINOU NO EXJS002 
+     // ABRIR O NODE DS CTRL+SHIFT+CRASE NO VSC
+     // OU TERMINAL NOVO TERMINAL C/ OBS. DE Nº
+     // . EXIT - SAIR
+     // CTRL + L - LIMPAR A TELA
+     
+          // OPERADORES RELACIONAIS 
+     
+//  5 > 2   ==> true        // MAIOR
+//  7 < 4   ==> false       // MANOR
+//  8 >= 8  ==> true        // MAIOR OU IGUAL
+//  9 <= 7  ==> false       // MANOR OU IGUAL
+//  5 == 5  ==> true        // IGUAL
+//  4 != 4  ==> false  // DIFERENTE OU (Ñ IGUAL)
+
+// O RESULTADO VAI SER SEMPRE BOLEANO TIPO
+// VERDADEIRO (TRUE) OU 
+// FALSO (FALSE)  
+// 
+// EX: FAZER NO NODE DS VIDEO 8 AS 6:40
+
+//  (OBS. OPERADORES ORDEM DE PRECEDÊNCIA )
+    //    ARITMÉTICOS
+    //    ATRIBUIÇÃO
+    //    RELACIONAIS  
+    //    LÓGICOS
+    //    TERNÁRIO
+
+    // OBS. EXISTEM OUTRAS FAMÍLIA DE OPERADOES NO JS
+
+    // EX: DE COMPARAÇÃO
+    // preço >= 200.50  //testando o preço é maior ou igual a 200.50? 
+
+    // idade < 18   // a idade é menor do que 18?
+
+    // curso == 'JavaScript'  // o curdo é JavaScript?
+
+    // n1 != n2 
+
+           // OPERADORES RELACIONAIS (IDENTIDADE)
+
+    //  5 == 5    ==> true
+    //  5 == '5'  ==> true   // NO JS É IGUAL SIM (O SINAL DE IGUALDE NÃO TESTA O TIPO)
+    //  5 === '5' ==> false  // NESTE CASO ESTAMOS
+    //  TESTANDO SE SÃO IDENTICOS
+    //  5 === 5  ==> true // NESTE CASO É
+    //  VERDADEIRO
+
+    // ABRIR O NODE DS CTRL+SHIFT+CRASE NO VSC
+    // OU TERMINAL NOVO TERMINAL C/ OBS. DE Nº
+    // . EXIT - SAIR
+    // CTRL + L - LIMPAR A TELA
+    // Video 8 as 09:15 Operadores identicos Linha 97
+
+     // CONTINUA VIDEO 8 AS 8:50
+     // FIM DE  8 OPERADORES (PARTE 2)
+     // CONTINUA EXJS004 (PARTE 2) 
+
+
+     </script>
+
+     <!--
+     - JavaScript,
+     - HTML/CSS
+     - SQL
+     - Python
+     - Java
+     - Shell
+     - C#
+     - PHP
+     - C++ 
+     - React E JavaScript- 
+     -->
+    <br>
+    <hr>
+
+    <p>Curso Grátis de JavaScript e ECMAScript para Iniciantes Video 1/33</p>
+    
+
+    <p> Esta é a página do site exjs002. Se você quise, pode acessar a minha <a href="../ex001/index.html">Index</a></p>
+
+    <p>Esta é a pagina do site exjs002. Se vicê quise, pode acessar a minha <a href="exjs003.html">Terceira Página exsj</a> </p>
+
+     <p>Esta é a pagina do site exjs002. Se vicê quise, pode acessar a minha <a href="exjs004.html">Quarta Página exsj</a> </p>
+
+      <p>Esta é a pagina do site exjs002. Se vicê quise, pode acessar a minha <a href="exjs005.html">Quinta Página exsj</a> </p>
+
+
+</body>
+</html>

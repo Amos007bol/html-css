@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exjs003</title>
+    
+<style> /* CSS - Estilo*/
+    body {
+        background-color: darkgrey;
+        color: white;
+        font: normal 20pt Arial;
+    }
+
+    h1 {
+        color: rgb(241, 201, 126); 
+    }
+</style>
+
+</head>
+<body>
+    <p>Primeiros passos no Backend com NodeJs e Javascript (Seja Dev) Site: https://expressjs.com/pt-br/ </p>
+    <p>Curso JS Video 8 À 12 Mod B (Comandos Básicos do JS) - Variáveis e Tipos Primitivos - Tratamento de dados - Operadores (Parte 1)  Operadores (Parte 2 Dados)</p> 
+    <br>
+    <script>
+
+     // 3º OPÇÃO:
+          // STRING ==> NÚMERO QUEBRADO OU INTEIRO
+ var n1 = Number (window.prompt('Digite um numero:' )) // string
+ var n2 = Number(window.prompt('Digite outro numero:') )// string 
+ var s = n1 + n2
+ // window.alert('A soma dos valores é: ' + s) // Ex está CORRETO EX.  15.50 + 10.00 R/ 25.50  
+ window.alert(`A soma dos valores ${n1} e ${n2} é igual a ${s}` )  // Ex está CORRETO Também EX.  4.5 + 2 R/ 6.5 
+
+ // VAR, LET OU CONST (OBS. PODEMOS UTILIZAR UMA DESSAS VARIÁVEIS - VIDEO 6 - 08:20 JS)
+ //// 
+
+
+      //* 2 formas de abrir Node DS no PC e Visual Studio Code (Ctrl + ``Crase) */
+      // Exercício no NODEJS 
+      // >'Oi'
+      // Resp: 'Oi'
+      // > 3+2
+      // Resp: 5
+      // > var nome = 'Amós'// criando var nome
+      // undefined
+      // > nome
+      // Resp: 'Amós'
+      // > nome = "Paulo" // Alterando nome da VAR
+      // 'Paulo'
+      // > var idade = 18
+      // idade
+      // 18
+      // > var salário = 1550.35
+      // salário
+      // 1550.35
+      // > var sexo = "M"
+      // sexo
+      // "M"
+      // OBS. NO VSC Sair .Exite e no Terminal Exite (2 Ambiente diferentes)
+      
+      // Criação de Váriavel e Utilização: Obs.Tela Cheia (Ctrl+ L Limpa )
+      // > var n1 = 8
+      // undefined
+      // > var n2 = 5
+      // undefined
+      // > n1 
+      // 8
+      // > n2 
+      // 5
+      // > n1 + n2
+      // 13
+      // OBS. NÃO ESQUECER DAS REGRAS DO IDENTIFICADOR
+      // > var n = 200
+      // undefined
+      // > n
+      // 200
+      // > typeof n
+      // 'number'
+      // > n = 'Google'
+      // 'Google'
+      // > typeof n
+      // 'string'
+      // > typeof 6 
+      // 'number'
+      // > typeof 6.5
+      // 'number'
+      // > typeof "6.5"
+      // "string" 
+      // > typeof []
+      // 'object'
+      // >typeof {}
+      // Object
+      // > typeof function(){}
+      // function
+      // > typeof  undefined
+      // undefined
+      // > typeof NaN 
+      // number
+      // > typeof infinity
+      // number 
+      // > typeof null
+      // Object
+
+      // > nome = "Amós"
+      // "Amós"
+      // > idade = 67
+      // 67 
+      // nota = 5.5
+      // 5.5
+      // O aluno Amós ${nome} com ${idade} anos tirou nota ${nota}
+    ///
+     
+    //// FORMATANDO NÚMEROS
+     // NODE DS VIDEO 6 MOD B 34:00
+     // var n1 = 1543.5
+     // n1
+     // n1.toFixed(2)
+     // EX: ABAIXO
+     // > var n1 = 1545.5
+     // > n1
+     // 1545.5
+     // > n1.toFixed(2) // Passa ter 2 casas decimais c/ (n1.toFixed(2))
+     // "1545.50"
+     // n1.toFixed(2).replece(".", ",") // Trocando (. POR ,)
+     // "1545,50"
+     // (OBS. NODE DS - VIDEO 6 - 35:00 JS)
+
+     // n1.toLocaleString('pt-BR', {style: `currency, currency: 'BRL' `}) OU 'USD, EUR'
+     // R$ 1.545,50
+     // FIM DO VIDEO 6 MOD B
+     ///
+
+      // TIPOS PRIMITIVOS PRIMORDIAIS
+
+     // - 5 18 -12 // NÚMERO INTEIRO-TIPO NUMBER
+     // - 0.5 -15.9 3.14 8.0 // NÚMEROS REAIS Nº C/PONTO FLUTUANTE OU FLOAT -  TIPO NUMBER
+
+     // - "Google" // STRING
+     // - 'JavaScript'// STRING
+     // - `Maria`//STRING
+     // - CPF, ID, TEL // STRING
+
+     // - TRUE // BOOLEAN
+     // - FALSE // BOOLEAN
+
+              //  DATA TYPES:
+        // NUMBER // 2 Valores Internos sâo:
+        //   Infinity
+        //   NaN   
+        // String  
+        // Boolean
+        //   null
+        // UNDEFINED 
+          // Object
+         //  Array // é um object, temido "vetor" 
+        // Function // é 1 tipo primitivo na linguagem JS 
+        
+        // COMANDO ( TYPEOF) TIPO DE 
+        // > var n = 200
+        // undefined
+        // > n
+        // 200
+        // > typeof n
+        // number 
+        // > n = "Google" // uma caracteristica JS
+        // > "Google" // entre aspas ele é string 
+        // > typeof n
+        //   string
+        // > typeof 6
+        // 'number' // é um number
+
+        // >typeof "6.5" 
+        //  string // entre aspas ele é string 
+
+        // Curso Grátis de JavaScript e ECMAScript para Iniciantes 
+        // Próximo dideo 10 JavaScript
+
+        // > typeof [] // entre[] e {} é um objeto
+        //   objetc
+        // > typeof {}
+        //   objetc
+
+        // > typeof function () {}
+        //   function // é uma function
+ 
+        // > typeof undefined
+        //  undefined // é um undefined
+
+        // > typeof NaN
+        //   number // é um namber
+
+        // > typeof infinity
+        //   number // é um number
+
+        // > typeof null
+        //   object // é um object
+
+// OBS. Vamos nos concentrar nos( Number, String, Boolean, null, undefined - diferenciando eles entre si  )
+// Ex. 01
+//  window.alert('Minha primeira mensagem') 
+//  window.confirm('Esta gostando do JS')
+//  window.prompt('Qual é seu nome?')
+///
+//  var nome = window.prompt('Qual é seu nome?')// VAR, LET OU CONST (OBS. PODEMOS UTILIZAR UMA DESSAS VARIÁVEIS - VIDEO 6 8:20 JS)
+//  window.alert('É um grande prazer em te conhecer,' + nome + '!') // (+)concatenação e adição
+
+// ( number + number ) Para Adição 
+// ( string + string ) para concatenação
+
+// + para adição
+// + para concatenação
+
+// (O window.prompt  RETORNA PRÁ MIM UMA String, MESMO QUE EU DIGITE UM  Nº ISTO É UMA CARACTERISTICA DO COMANDO )
+
+/// 
+ // var n1 = window.prompt('Digite um numero:' ) // string
+ // var n2 = window.prompt('Digite outro numero:' )// string 
+ // var s = n1 + n2
+ // window.alert('A soma dos valores é: ' + s  ) // Ex está ERRADO
+
+///
+          // STRING ==> NÚMERO INTEIRO
+// 1º OPÇÃO:          
+// var n1 = Number.parseInt (window.prompt('Digite um numero:' )) // string
+// var n2 = Number.parseInt(window.prompt('Digite outro numero:') )// string 
+// var s = n1 + n2
+// window.alert('A soma dos valores é: ' + s) // Ex está CORRETO EX. 4 + 2 R/ 6
+
+// 2º OPÇÃO:
+            // STRING ==> NÚMERO QUEBRADO
+ // var n1 = Number.parseFloat (window.prompt('Digite um numero:' )) // string
+// var n2 = Number.parseFloat(window.prompt('Digite outro numero:') )// string 
+// var s = n1 + n2
+// window.alert('A soma dos valores é: ' + s) // Ex está CORRETO EX.  15.50 + 10.00 R/ 25.50 
+
+ ////
+ //      FORMATANDO STRING
+ // EX. ACIMA 
+ // Utilizaremos Bastante este formato
+// var s = 'JavaScript' - (aspas simples)
+// 'Eu estou aprendendo s' (Não faz interpolação)
+// "Eu estou aprendendo" + s (usa concatenação)
+// `Eu estou aprendendo ${s}` (usa templete string (crase ``))
+
+// var s = 'JavaScript'
+// s.length  (MOSTRA QUANTAS CARACTERES A STRING TEM)
+// s.toUpperCase()  (TUDO PARA "MAIÚSCULAS" )
+// S.toLowerCase()  (TUDO PARA "MAIÚSCULAS")
+
+// jAVAsCRIPT VIDEO 6 AS 28:00  
+///
+
+// Number. parseInt(n)
+// Number.parseFloat(n)
+// Number(n)         
+   
+            // NÚMERO  ==> STRING
+ // String(n)
+ // n.toString()   
+ 
+        // ABRIR O NODE DS CTRL+SHIFT+CRASE NO VSC
+        // OU TERMINAL NOVO TERMINAL C/ OBS. DE Nº
+        // . EXIT - SAIR
+        // CTRL + L - LIMPAR A TELA
+        
+// Video 6 MOD B as 26.00: LINHA 97
+// VIDEO 7 SERÁ FEITO NO EXJS002 OPERADORES(PARTE1 )
+
+    </script>  
+    <p>Curso Grátis de JavaScript e ECMAScript para Iniciantes Video 1/33</p>
+    <hr>
+
+ <p> Esta é a terceira página do site. Se você quise, pode acessar a minha <a href="../ex001/index.html">Index</a></p>   
+ <p> Esta é a terceira página do site. Se você quise, pode acessar a minha <a href="exjs002.html">exjs002</a></p>
+ <p> Esta é a terceira página do site. Se você quise, pode acessar a minha <a href="exjs004.html">exjs004</a></p>
+ <p> Esta é a terceira página do site. Se você quise, pode acessar a minha <a href="exjs005.html">exjs005</a></p>
+
+
+</body>
+</html>

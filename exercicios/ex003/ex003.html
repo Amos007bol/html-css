@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../fotoeimg/curso alemanha 1.jpg" type="image/x-icon">
+    <title>Alinhamento de Texto</title>
+<style>
+  @charset "UTF8";
+  /*
+  Tudo Em HTML é ID
+  Tudo em HTML é class
+
+  Tudo em CSS  é #
+  Tudo em CSS  é .
+
+  # é um ID
+  . é uma classe
+  : é uma Pseudo-classe 
+  */
+  body  {
+  background-color: rgb(205, 255, 201);  
+  font: normal 16px Arial, verdana, serif;
+  }
+
+  h1  {
+     color: red;
+  }
+  
+  h1#principal { /* h1 principal personalizado - só um principal*/
+   text-align: center;
+   color: dimgrey;
+   background-color: rgb(53, 53, 117);
+  }
+   
+    h2 {
+    color: rgb(24, 128, 128);
+  }
+  
+
+  .basico { /* aqui não precisa de colocar o elemento (h2) só .basico*/
+    color: blueviolet;
+    
+  }
+
+  .intermediario { /* aqui não precisa de colocar o elemento (h2) só .intermediario*/
+  color: aqua;
+
+  }
+
+  .avancado { /* aqui não precisa de colocar o elemento (h2) só .avancado*/
+    color: coral;
+ 
+  }
+
+
+  p  {
+    text-align: justify;
+    text-indent: 30px;
+  }  
+
+  .destaque {
+    background-color: black;
+  }
+</style>
+
+</head>
+<!-- <p>Criando Sites com HTML E CSS: VIDEO 19 MOD 2 </p>
+ 
+-->
+<body>
+  <h1 id="principal">Criando Sites com HTML E CSS H1P</h1><!-- (id) Identificador Principal (UNICO )-->
+  <h1>Aprendendo HTML (H1)</h1>
+  <h2 class="basico"> HTML básico  H2</h2> <!-- class pode ser multiplo-->
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <span class="basico">Classe Básico </span>Libero magni optio dolorem tenetur consequatur labore error ut totam, nesciunt soluta exercitationem id eos sint dignissimos vitae iure recusandae rem aliquam. (P)</p>
+
+  <h2 class="intermediario">HTML Intermediário(H2)</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi culpa incidunt minus non nostrum. <marck class="intermediario">Intermediario</marck> variable in, repellat sunt tempora tenetur quos laboriosam natus corporis iure ipsum quo ipsa possimus dolores! Lorem, ipsum dicta unde qui. </p>
+
+  <h2 class="avancado">HTML Avançado (H2)</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam vel quas esse suscipit itaque nulla tenetur, eveniet commodi reiciendis ipsum enim repudiandae <ins class="avancado">texto inserido</ins> fugit eius alias explicabo quae rerum saepe id?(P)</p>
+
+  <h1 class="destaque">Aprendendo CSS (H1) </h1>
+
+  <h2 class="basico">CSS Básico (H2) </h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam iusto, totam nemo blanditiis quisquam atque ratione explicabo temporibus ex cumque nihil dolor cum ut <strong class="basico">(Semantica) </strong>  voluptates in repellat debitis? Laboriosam, perferendis! (pt-br) </p>
+
+  <h2 class="intermediario">CSS Intermediário (H2) </h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui doloribus beatae corporis ea voluptates nostrum iure officiis officia, aliquid eos incidunt sapiente dicta tenetur eaque veritatis? Consequuntur recusandae facere laborum. (P) </p>
+
+  <h2 class="avancado destaque">CSS Avançado (h2) </h2> <!-- Mais de uma classe juntas -->
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis provident, pariatur sit repellendus unde non, illum ex ipsum deserunt nisi, aperiam culpa! Quae dignissimos autem nisi, vel est unde quos? (P)</p>
+  <br>
+<!--
+Obs. (ID PRINCIPAL) SÓ EM UM ELEMENTO NO MESMO DOC.
+ (CLASSE BASICO) PARA USAR EM MAIS DE UM ELEMENTO   
+-->
+
+  <p>Próximo Pseudo-classes em CSS Video 21 MOD 2  </p>  
+
+  
+  <hr>
+
+<p>Esta Página é um oferecimento de <a href="https://fastvisaturismo.com.br" target="_blank">Fastvisaturismo</a></p>
+<hr>
+<p> Esta é a Terceira página do site. Se você quise, pode acessar <a href="../ex001/index.html"> Index</a></p>
+
+<p> Esta é a Terceira página do site. Se você quise, pode acessar a minha <a href="../ex002/ex002.html">Segunda página</a></p>
+
+<p> Esta é a Terceira página do site. Se você quise, pode acessar a minha <a href="../ex005/ex005estilo.html">Quinta página</a></p>
+
+<p> Esta é a Terceira página do site. Se você quise, pode acessar a minha <a href="../ex006/ex006estilo.html">Sexta página</a></p>
+
+<p> Esta é a Terceira página do site. Se você quise, pode acessar a minha <a href="../ex007/ex007estilo.html">Sétima página</a></p>
+
+
+
+</body>
+</html>

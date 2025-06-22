@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exjs005</title>
+</head>
+<body>
+    <p>Primeiros passos no Backend com NodeJs e Javascript (Seja Dev) Site: https://expressjs.com/pt-br/ </p>
+
+  <h1>Criando uma API do ZERO com Node.js e Banco de    Dados 
+  DevClub | Programação - Muito Bom Professor 1º PARTE:
+
+  Aprendendo React do Zero, Conectando Back e Front End, e Consumindo API
+
+DevClub | Programa 2º PARTE
+</h1>
+
+<!--
+VERBOS: GET, BUSCAR UMA REQUISEÇÃO (CONSULTAR)  
+VERBOS: POST, ( POSTAR, ENVIAR ALGO)
+VERBOS: PUT, ( ALTERAR ALGO )
+VERBOS: PATCH ( ALTERAR ALGO)
+VREBOS: DELETE, ( EXCLUIR ALGO)
+
+
+2º EX 
+const express = require('express') //form.correta p/inportar o express
+const app = express() // nosso site back-end
+const port = 3000 // porto do nosso back-end 
+
+// 2º EX: RESPOSTA DO A MINHA SOLICITAÇÃO (GET)
+
+app.get('/', () => { //('/') Ñ passar nada no parâmetro
+console.log(`app online na porta ${port}`) 
+// aqui dentro colocar e que quiser
+// se vai abrir corretamente entre (cons log string)
+// var {port}
+// no terminal  node espaço , ai navegamos até o aquivo(src/index.gs
+
+})
+
+FIM DE 2º EX:
+
+/////
+ // EX: 1º FAZER UMA SOLICITAÇÃO (GET)
+const express = require('express') //form.correta p/inportar o express
+const app = express() // nosso site back-end
+const port = 3000 // porto do nosso back-end 
+
+ // 1º EX:
+ //app.get('/', (req, res) => { // ('app.get('/', (req,res)) 
+  //res.send('Hello World!') // ele retornanou, 'hello world get!'('hello world rota get!') //construindo rota 
+ //})
+
+ // EX: 1º FAZER UMA SOLICIATÇÃO (GET)
+app.listen(port, () => { // ouvir nosso cod vai tomar uma ação
+  console.log(`app online na porta $(port)`)// vai checar se abriu certo 
+  // c/ string inf. frase que eu quiser
+  // (rodar: node ex001.js) 
+  // iremos navegar até o arquivo ex001.js
+  // ele vai está ouvido,temos que configurar p/ 
+  // clicar no terminal e apertar ( Ctrl C ) p/cont digitar
+  // conf.um VERBO: HTTP:
+  //
+
+})
+// Fim do EX: 1º
+
+
+
+
+
+
+const express = require('express')/* importe express */
+const app = express() 
+const port = 3000 /*ou PORT em maiuscula node */
+
+app.get('/', (req, res) => { /*get é um verbo http*/
+  res.send('Hello World!')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on: http://localhost:${port}`)
+})
+
+/*
+app.listen(port, () => { /*app. é ouvir na porta especificada /
+  console.log(`Example app listening on port ${port}`)
+})
+*/
+
+/*
+-thunder cliente (fazer teste e verificar os get interface bac e front )
+- o get(popular) buscamos inf.no back/servidor 
+- console.log(`Example app listening on: https://localhost:${port}/´) string ver no computador
+- node ex001.js (ver na tela )
+*/
+-->
+
+  
+
+  <script>
+    
+  </script>
+  
+<p>Curso Grátis de JavaScript e ECMAScript para Iniciantes Video 1/33</p>
+<hr>    
+
+ <p> Esta é a quinta página do site. Se você quise, pode acessar a minha <a href="../ex001/index.html">Index</a></p>   
+ <p> Esta é a quinta página do site. Se você quise, pode acessar a minha <a href="exjs002.html">exjs002</a></p>
+ <p> Esta é a quinta página do site. Se você quise, pode acessar a minha <a href="exjs003.html">exjs003</a></p>
+ <p> Esta é a quinta página do site. Se você quise, pode acessar a minha <a href="exjs004.html">exjs004</a></p>
+ 
+    
+    <hr>
+</body>
+</html>

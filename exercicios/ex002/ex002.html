@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../fotoeimg/curso alemanha 1.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Meu Site </title>
+    <!--
+    Curso de Node.JS - O que é Node.JS #01
+
+   Victor Lima - Ciência da Computação
+
+   Videos: 1 a 63 
+   1 a   : apresentação e instalações VSC  
+    -->
+    <style>
+      /* 
+  Tudo Em HTML é ID
+  Tudo em HTML é class
+
+  Tudo em CSS  é #
+  Tudo em CSS  é .
+
+  # é um ID
+  . é uma classe
+  : é uma Pseudo-classe
+  
+  root {
+  --cor0: #C5EBD6; ( Palheta de cores )
+  --cor1: #83E1AD; ( Ctrl + espaço localizar a cor)
+  --cor2: #3DDC84; ( variáveis de cores )
+  --cor3: #2FA866;
+  --cor4: #1A5C37;
+  --cor5: #06341E;
+  
+  ----fonte-padrao: Arial, Helvetica, sans-serif; 
+  -- 
+  }
+
+ */
+
+        * {
+          margin: 0px;
+          padding: 0px;    
+        }    
+        
+        body {
+            background-color: rgb(90, 87, 87); /*preenchimento do herder */
+            font-family: Arial, Helvetica, sans-serif; /*fonte do site*/
+            /*margin: 0px;/colando nas laterais*?*/
+        }   
+            
+         main {
+            min-width: 300px; /*lag min da tela*/
+            max-width: 1000px;/*Lag max da tela*/
+            background-color: white;/*cor de fundo*/
+            padding: 20px;/* altura */
+            margin: auto; /*margem laterais*/
+            margin-bottom: 30px;
+            /* border-radius: 15px;/ borda em todas laterais*/
+            border-bottom-left-radius: 10px; 
+            border-bottom-right-radius: 10px;
+            box-shadow: 0px 0px 5px red;
+        }
+
+        main p {
+          margin: 15px 0px 15px 0px;/*Separando a margem do (P) OU 15px 0px;*/
+          text-align: justify; /*Arrumando as laterais*/
+          text-indent: 30px;/*Recuo no P no Início*/
+          /* font-size: 1.5em;/*Aumenta as fontes*/
+          line-height: 1em;/*espaço entre as fontes C P/ B*/
+        }
+
+        main h2 {
+           background-color: bisque; /*cor de fundo */
+           text-align: center;
+        }
+
+        main  h3 {
+         background-color: blueviolet;
+         /* color: white; */
+         padding: 5px;
+         margin: -10px -10px 0px 10px;
+         border-radius: 10px 10px 0px 0px;
+        }
+
+        main strong {
+            color: blue;
+        }
+
+        main img {
+           width: 100%;/* lag independente do conteudo de 100%*/
+        }        
+       
+        /*
+           main img {
+            width: 50%;/* Todas as IMG ficam pequenas / 
+            display: block; /* Centraliza IMG /
+            margin: auto; /*Centraliza IMG /
+        } Gerar IMG P G M No Site
+        */
+        
+        /*
+        main img.pequena { /* video 40 mod 2 /
+            max-width: 350px;
+            display: block;
+            margin: auto;
+        }
+        */
+
+         main a:hover {
+            text-decoration: underline; /*no Link decoração Q Passar o mouse */
+            color: rgb(52, 126, 126);
+        }
+
+        div.video {
+            background-color: rgb(243, 138, 9);
+           /* margin-bottom: 30px; */
+            margin: 0px -20px 30px -20px; 
+            padding: 20px;
+            padding-bottom: 55%;
+            position: relative;
+         
+        }
+
+        div.video > iframe {
+           position: absolute;
+           top: 5%;
+           left: 5%;
+           width: 90%;
+           height: 90%;
+
+        }
+        
+        aside {
+            background-color: rgb(151, 219, 151);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px 1px black;/*3px 3px 0px rgba(0, 0, 0. 281); */
+         }
+
+         aside > h3 {
+            background-color: rgb(238, 193, 139);
+            color: white;
+            padding: 10px;
+            margin: -10px -10px 0px -10px;
+            border-radius: 10px 10px 0px 0px;
+         }
+
+         aside > ul {
+            list-style-type: '\2714';
+            list-style-position: inside;
+            columns: 2;
+         }
+
+        header {
+           /* width: 600px; tamanho do header*/
+           /* background-color: rgb(90, 87, 87);/*cor de fundo*/
+            
+            min-height: 150px; /*Altura do header*/
+
+            margin-top: 40px;
+          
+           /* margin: 10px; margem laterais*/
+        }
+
+        header > h1  {
+            color: white; /*Cor do h1 Principal*/
+            font-size: 3em; /*Tamanho da fonte*/
+            /* font-weight: normal; */
+            margin-bottom: 20px;/*Distância entre H1 P Principal*/           
+            text-shadow:  3px 3px 0px black;/*Sobra no texto*/            
+            text-align: center;/*Centralizando H1 e P Principal */
+        }
+
+        header > p {
+            color: white;/* Cor da Letra*/
+            font-size: 1.2em;/*Tamanho da fonte*/
+            max-width: 500px; /*distância da fonte no header*/
+            padding-right: 10px;
+            padding-left: 10px; 
+            margin: auto; 
+            text-shadow:  3px 3px 0px black;/*Sobra no texto*/
+            text-align: center;/*Centralizando H1 e P Principal */
+          
+        }
+
+        nav  {
+            background-color: rgb(90, 87, 87);/*cor de fundo*/
+           /* background-color: rgb(243, 8, 8);/*fundo*/
+            padding: 10px;/* altura do NAV*/
+            box-shadow: 0px 7px 7px black; /*deslocamento horizontal, vertical,espalhamento e sombra */
+             text-shadow:  3px 3px 0px black;/*Sobra no texto*/
+        } 
+
+        nav > a {
+            color: white;/*cor da fonte*/
+            padding: 10px;
+            border-radius: 10px; /*Arredondamento*/
+            text-decoration: none;/*tira o sublinhado*/
+            font-weight: bold;
+            transition-duration: 1s;
+           
+        }
+
+         nav > a:hover {
+            background-color: rgb(73, 68, 68);
+            
+        }        
+
+         article {
+            background-color:lightgray; /*cor de fundo*/
+            padding: 5px;/*altura*/
+         }
+
+         /*
+         article > aside {
+            background-color: rgb(155, 154, 154);
+         }
+         */
+         
+
+         section  {
+            background-color:  lightgray
+         }
+
+         h1  {
+            background-color:  rgb(107, 106, 106);
+            color: white; 
+         }
+
+        
+        footer  {
+            background-color: black;/*cor de fundo*/
+            color: white;/*Cor da letra*/
+            text-align: center;/*centralizando */
+            /* font-size: 0.5em; / Diminui a fonte*/
+            padding: 5px;/*altura*/
+            /*margin: 10px; /margem laterais*/            
+        }
+
+        footer a {
+          color: white;
+          font-weight: bolder;
+          text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+            color: brown;
+
+        }    
+
+       
+
+        div#bola  {
+            height: 100px;
+            width: 100px;
+            margin: 10px;
+            background-color: white;
+            border-radius: 50%; 
+        }
+        
+
+        /*
+        marck {
+            background-color: yellow;
+        }
+        */
+
+    </style>
+</head>
+<body>
+    <!-- usando as Tags agrupadoras 
+    - NAV Para Menu
+    - Header para cabeçalho
+    - Main para o conteudo principal
+    - seções de do site
+    - Próximo video 26/27/28/29/30/36/37/38/39/40/41/ 42 MOD 2
+    - PRÓXIMO VIDEO 1 MOD 3
+
+    -->
+    <header> <!-- Cabeçalho e Nav-->
+      <h1> Viagens & Turismo</h1>
+      <p> Visto & Passaporte</p>
+      <nav>
+        <a href="../ex001/index.html">Home</a>
+        <a href="../ex002/ex002.html">Noticias</a>
+        <a href="../ex003/ex003.html">Curiosidades</a>
+        <a href="../ex005/ex005estilo.html">Fale Conosco</a>
+        
+      </nav>
+    </header>
+
+    <main> <!--Main Conteudo Principal - dentro do main, section e article -->
+      <section id="assuntos">
+        <h1>
+            HISTÓRIA DO MASCOTE DO AIDROID (H1 main 1º)
+        </h1>
+
+        <p> (main conteudo principal, section, article, aside) Esportes politicas e tecnologia (P) Lorem, ipsum dolor sit <strong>MASCOTE DO AIDROID </strong>amet consectetur adipisicing elit. Dolor ab quibusdam porro itaque sint aperiam facilis aliquam voluptatem blanditiis? Voluptatem eius vero laboriosam dolore. Aperiam doloremque cumque blanditiis eius quibusdam? (p).
+        </p>
+
+        <h2>
+            A PRIMEIRA VERSÃO (H2)
+        </h2>
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, commodi sapiente? <strong>Link=></strong><a href="https://fastvisa.com.br" target="_blank">Fastvisa</a> Minima deleniti quod perferendis beatae vitae, voluptatem <strong>APRIMEIRA VERSÃO</strong> dolore earum, alias ratione neque autem aspernatur molestias nobis. Culpa, quae natus! (P)
+        </p>
+
+        <img src="../fotoeimg/avião.jpg" alt="aviao">
+
+        <!--
+           Fazer img P M G Adaptar no site
+        <picture> 
+            <source media="(max-width: 600px)" srcset="imagem pequena">
+             <img src="../fotoeimg/avião.jpg" alt="aviao">
+        </picture> 
+        Video: 38  MOD 2 Curso em Video
+        --> 
+
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure praesentium obcaecati explicabo <strong>Link=></strong><a href="https://fastvisaturismo.com.br" target="_blank">Fastvisaturismo </a>sequi? Veniam itaque nostrum unde laborum enim laboriosam nemo dolore, ullam ratione, est eum minima amet cupiditate eaque!
+        </p>
+
+        <h2>
+            SURGE UM NOVO MASCOTE (H2)
+        </h2>
+
+        <p>Como Mudar o favicon - Hieraquia de Títulos Semântica (W3C) Negrito e Itálico (Video 19/20/21/22/23/24) <br> 
+        Lorem <b>(não semantica)</b>, dolor sit amet <strong>(Semantica) </strong> consectetur italico adipisicing <i>(ctrl shift e p italico Ñ sematico)</i> elit. <em>italico Semantica,</em> cum  possimus <mark>nisi aut</mark> quasi <marck>ullam quam </marck>dolorum est autem perspiciatis sint esse tempora, minima eaque, totam fugit ipsa vero! <small>Texto Pequeno</small> e um Texto Grande, <ins>texto inserido</ins>  mais e <del>texto excluido. </del> <br> 
+        <p>Tipo x<sup>20</sup>+3</p>
+        <p>Tipo H<sub>2</sub>0</p>
+        </p>
+
+        <img src="../fotoeimg/curso alemanha 1.jpg" alt="curso na alemanha">
+
+      </section> 
+
+      <section id="noticias">
+        <article>
+            <h2>NOTÍCIA SOBRE O BRASIL (H2)  </h2>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi saepe doloremque accusamus eius quo sapiente omnis assumenda! Ullam aliquid error, vitae iure maiores nesciunt reprehenderit excepturi accusantium quibusdam quae a.(P) </p>
+       
+       <img src="../fotoeimg/curso canada.jpg" alt="curso no canada">
+
+
+        <p>
+            Lorem, ipsum dolor sit amet consectetur <marck>TEXTO MARCADO</marck>
+                adipisicing elit. Illum quae maxime, odit vel, veniam tempora minima dicta provident, reiciendis ex deleniti perspiciatis molestiae voluptates. Odio veritatis quis ipsam ratione placeat.
+        </p>
+
+       
+       <div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/fiKHDwjmG8k?si=xyiUJ0a9D_O5rbyv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+       </div>
+        
+            <aside>
+                 
+                <h3>
+                    QUER APRENDER MAIS? (H3)
+                </h3>
+
+                <p>Artigo escrito por José da Silva (P) Lorem, ipsum dolor sit amet consectetur Link=><a href="https://youtu.be/Mdc6a3CEYK8?si=-LAOE15TweKZfx1v" target="_blank>">ANCAPSU</a> 
+                adipisicing elit. Numquam ex unde fugiat eum  commodi? Nulla autem optio tempore <ins>QUER APRENDER MAIS? </ins>sequi ex vero quos, hic eveniet esse alias quod nam qui enim! (P)
+                </p>                
+
+                <ul>
+                    <li> <abbr title="Bolo de copo">cupcake</abbr> </li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro atque similique suscipit consequuntur? <em>ITALICO SEMANTICA,</em> Natus corporis beatae, ad eum aut, consequuntur laboriosam ducimus non animi velit porro dicta impedit veniam quod? (fim do main conteudo principal)
+                </p>
+
+            </aside>
+        </article>
+
+      <!--
+        <article>
+          <p>Teste (P)</p>
+        </article>
+       -->        
+       
+      </section>  
+    </main> <!--Main Conteudo principal - dentro main, section e article -->
+    
+    <footer>
+        <p>Site criado por Amós (P) 
+         <a href="https://fastvisaturismo.com.br" target="_blank">Fastvisaturismo </a> 
+        </p>
+    </footer>
+    
+    <div id="bola">
+       <img src="../fotoeimg/logo fvTurismo.png" alt="">
+    </div>
+      
+</body>
+</html>
